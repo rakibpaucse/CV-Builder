@@ -3,19 +3,17 @@ import { createMuiTheme, responsiveFontSizes } from "@material-ui/core";
 let theme = createMuiTheme({
     // typography: {
     //     fontFamily: [
-    //       '',
+    //       'comicSans', 'wheelFairy'
     //     ].join(','),
     // },
     palette: {
         primary: {
-            main: '#150941'
+            main: '#ccc'
         },
         secondary: {
-            main: '#f80040'
+            main: '#f5f5f5'
         },
-        action: {
-            disabledBackground: '#333'
-        }
+       
     }
 })
 
