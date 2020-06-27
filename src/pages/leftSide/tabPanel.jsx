@@ -4,23 +4,23 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
 
-import Profile from '../../components/leftSide/profile'
-import Objective from '../../components/leftSide/objective'
-import Work from '../../components/leftSide/work'
+import Profile from '../../components/leftSide/profile/profile'
+import Objective from '../../components/leftSide/objective/objective'
+import Work from '../../components/leftSide/work/work'
 
 
-import Education from '../../components/leftSide/education'
-import Awards from '../../components/leftSide/awards'
-import Certifications from '../../components/leftSide/certifications'
+import Education from '../../components/leftSide/education/education'
+import Awards from '../../components/leftSide/awards/awards'
+import Certifications from '../../components/leftSide/certifications/certifications'
 
 
-import Skills from '../../components/leftSide/skills'
-import Hobbies from '../../components/leftSide/hobbies'
-import Languages from '../../components/leftSide/languages'
+import Skills from '../../components/leftSide/skills/skills'
+import Hobbies from '../../components/leftSide/hobbies/hobbies'
+import Languages from '../../components/leftSide/languages/languages'
 
 
-import References from '../../components/leftSide/references'
-import Extras from '../../components/leftSide/extras'
+import References from '../../components/leftSide/references/references'
+import Extras from '../../components/leftSide/extras/extras'
 
 
 
@@ -56,9 +56,11 @@ const TabsHolder = ({value}) => {
         <div>
 
       <TabPanel value={value} index={0}>
-        <Profile/>
+        {/* <Profile/> */}
+        <Work/>
+        
       </TabPanel>
-      <TabPanel value={value} index={1}>
+      <TabPanel value={value} index={1} >
         <Objective/>
       </TabPanel>
       <TabPanel value={value} index={2}>

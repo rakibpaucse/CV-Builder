@@ -2,8 +2,8 @@ import React from 'react'
 import Grid from '@material-ui/core/Grid';
 
 
-import TextField from '../util/textfield'
-import LineBreak from '../util/lineBreak'
+import TextField from '../../util/textfield'
+import LineBreak from '../../util/lineBreak'
 
 const design = {
         padding : '20px 10px',

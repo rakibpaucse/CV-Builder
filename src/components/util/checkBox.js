@@ -6,16 +6,23 @@ import { makeStyles } from '@material-ui/core/styles';
 
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    background : '#ddd',
-    border : '1px solid #ccc' ,
-    '& > *': {
-      margin: theme.spacing(1),
+
+    checkboxHoder : {
+      padding :'15px 50px',
+    },
+    checkbox : {
+      fontSize : '56rem',
+      
     },
     inpBase : {
-        background : '#ddd',
-        border : '1px solid #ccc'
-    }
+        textAlign:'center',
+        padding :'0px 20px',
+        background : '#EAEAEA',
+        border:'1px sold #E0E0E0',
+        margin : '10px 20px 10px -90px',
+        fontSize : 25,
+        letterSpacing: 2
+    
   },
 }));
 
@@ -28,15 +35,16 @@ const CheckBox = ({label , handleChange}) => {
 
     return (
 
-        <div>
+        <div style={{display:'grid' , gridTemplateColumns: '50% auto' , textAlign:"center"}}>
            <FormControlLabel
                 value="start"
-                control={<Checkbox color="primary" />}
+                control={<Checkbox className={classes.checkbox} color="primary" />}
                 labelPlacement="end"
+                className={classes.checkboxHoder}
         />
 
             <InputBase
-                // className={classes.margin}
+                
                 defaultValue={label}
                 inputProps={{ 'aria-label': 'naked' }}
                 onChange={handleOnchange}

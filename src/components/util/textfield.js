@@ -3,7 +3,6 @@ import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import SubdirectoryArrowRightIcon from '@material-ui/icons/SubdirectoryArrowRight';
 import InputAdornment from '@material-ui/core/InputAdornment';
-import { fontSize } from '@material-ui/system';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -42,7 +41,7 @@ const Textfield = ({label , placeholder}) => {
                     InputProps={{
                     startAdornment: (
                         <InputAdornment position="start">
-                            <SubdirectoryArrowRightIcon style={{fill:'#f5f5f5'}}/>
+                            <SubdirectoryArrowRightIcon style={{fill:'currentColor'}}/>
                         </InputAdornment>
                     ),
                 }} />

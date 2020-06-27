@@ -8,7 +8,7 @@
         items : [ { shouldShow : false , textValue : ''}]
     } , 
     { 
-        title : 'work' ,
+        title : 'Work Experience' ,
         items : [ { shouldShow : false , experiences : [] , orgName : '' , role : '' , startingDate : '' , endingDate : '' , description : '' } ]
     } , 
     { 
