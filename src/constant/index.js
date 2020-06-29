@@ -1,30 +1,30 @@
- const info  = [
+ let info  = [
     { 
         title : 'profile' , 
-        items : [ { photoUrl : '' , firstName : '' , lastname : '' , occupation : '' , parmanentAddress : '' , currentaddress : '' , phoneNumber : '' , website : '' , emailAddress : ''} ]
+        items : [ { photoUrl : '' , firstName : '' , lastName : '' , occupation : '' , parmanentAddress : '' , currentAddress : '' , phoneNumber : '' , website : '' , emailAddress : ''} ]
     } ,
     { 
         title : 'objective' , 
-        items : [ { shouldShow : false , textValue : ''}]
+        items : [ { shouldShow : false , ObjectiveHeader : ''}]
     } , 
     { 
         title : 'Work Experience' ,
-        items : [ { shouldShow : false , experiences : [] , orgName : '' , role : '' , startingDate : '' , endingDate : '' , description : '' } ]
+        items : [ { shouldShow : false , experiences : [] , orgName : '' , role : '' , startDate : '' , endDate : '' , description : '' } ]
     } , 
     { 
         title : 'education' ,
-        items : [ { shouldShow : false , educations : [] , orgName : '' , major : '' , grader : '' , startingDate : '' , endingDate : '' , description : '' } ]
+        items : [ { shouldShow : false , educations : [] , institutionName : '' , major : '' , grade : '' , startDate : '' , endDate : '' , description : '' } ]
     } , 
     { 
         title : 'awards' ,
-        items : [ { shouldShow : false , awards : [] , awardTitle : '' , awardSubtitle : '' , description : '' } ]
+        items : [ { shouldShow : false , awards : [] ,title : '' , subitle : '' , description : '' } ]
     } , 
     { 
         title : 'certifications' ,
-        items : [ { shouldShow : false , certifications : [] , certifyName : '' , certifyAuthority : '' , description : '' } ]
+        items : [ { shouldShow : false , certifications : [] , name : '' , authority : '' , description : '' } ]
     } , 
     { 
-        title : 'skills' ,
+        title : 'skill' ,
         items : [ { shouldShow : false , skills : [] , skill : '' } ]
     } , 
     { 
@@ -33,15 +33,15 @@
     } , 
     { 
         title : 'languages' ,
-        items : [ { shouldShow : false , languages : [] , lanName : '' , lanLavel : '' , rating : '' } ]
+        items : [ { shouldShow : false , languages : [] , languageName : '' , level : '' , rateYourself : '' } ]
     } , 
     { 
         title : 'references' ,
-        items : [ { shouldShow : false , references : [] , refName : '' , position : '' , refPhone : '' ,  refEmail : '' , description : '' } ]
+        items : [ { shouldShow : false , references : [] , name : '' , position : '' , phoneNumber : '' ,  emailAddress : '' , description : '' } ]
     } ,
     { 
         title : 'extras' ,
-        items : [ { shouldShow : false , extras : [] , title : '' , description : '' } ]
+        items : [ { shouldShow : false , extras : [] , curricilamName : '' , curriculamDetails: '' , description : '' } ]
     } ,
 ]
 

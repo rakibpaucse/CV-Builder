@@ -3,7 +3,6 @@ import './App.css'
 import { ThemeProvider } from '@material-ui/core'
 import theme from '../themeProvider/themeProvider'
 
-import store from '../redux/store'
 import Layout from '../layout/layout'
 
 const App = () => {

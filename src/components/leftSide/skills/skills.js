@@ -3,7 +3,7 @@ import SecondaryComponent from '../../util/makeComponent/secondaryComponent/seco
 
 const Skills = () => {
     return (
-        <SecondaryComponent label='Skills' />
+        <SecondaryComponent label='Skill' />
     )
 }
 

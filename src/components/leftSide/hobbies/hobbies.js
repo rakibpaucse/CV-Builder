@@ -5,7 +5,7 @@ import SecondaryComponent from '../../util/makeComponent/secondaryComponent/seco
 const Hobbies = () => {
     
     return (
-        <SecondaryComponent label='Hobbies' />
+        <SecondaryComponent label='Hobby' />
     )
 }
 

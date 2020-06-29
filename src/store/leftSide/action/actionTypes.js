@@ -1,0 +1,2 @@
+export const ADD_INPUT_VALUE = 'ADD_INPUT_VALUE'
+export const ADD_TAB_VALUE = 'ADD_TAB_VALUE'

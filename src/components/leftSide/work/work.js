@@ -60,7 +60,7 @@ const Work = () => {
     const data = {
         name : 'Work Experience',
         showBtn : true ,
-        textFields : [ 'Name' , 'Role' , [  'Start Date ' , 'End Date']],
+        textFields : [ 'Org Name' , 'Role' , [  'Start Date ' , 'End Date']],
         
     }
     

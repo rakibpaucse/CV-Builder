@@ -3,6 +3,8 @@ import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import SubdirectoryArrowRightIcon from '@material-ui/icons/SubdirectoryArrowRight';
 import InputAdornment from '@material-ui/core/InputAdornment';
+import { useDispatch } from 'react-redux'
+import {addInputValue} from '../../store/leftSide/action/actionCreators'
 
 const useStyles = makeStyles((theme) => ({
 
@@ -27,13 +29,20 @@ const useStyles = makeStyles((theme) => ({
 
 const Textfield = ({label , placeholder}) => {
     const classes = useStyles();
+    const dispatch = useDispatch();
     
+    const onChange = e => {
+        dispatch(addInputValue({value:e.target.value , path: 'state[0].items[0].photoUrl'}))
+    }
+
+
 
    return (
         <div>
                 <TextField
                     className={classes.input}
                     id="input-with-icon-textfield"
+                    onChange = {onChange}
                     label={label}
                     placeholder={placeholder}
                     InputLabelProps={{
