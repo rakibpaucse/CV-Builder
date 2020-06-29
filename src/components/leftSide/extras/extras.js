@@ -1,11 +1,17 @@
 import React from 'react'
+import Main from '../../util/makeComponent/main'
+
 
 const Extras = () => {
+    const data = {
+        name : 'Extra Curriculam Activities ',
+        showBtn : true ,
+        textFields : [ 'Curriculam Name ' , 'Curriculam Details' ],
+        
+    }
+    
     return (
-        <div>
-             <h1> I Am Extras </h1>
-        </div>
+        <Main data={data}/>
     )
 }
-
 export default Extras

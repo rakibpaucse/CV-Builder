@@ -57,7 +57,7 @@ const TabsHolder = ({value}) => {
 
       <TabPanel value={value} index={0}>
         {/* <Profile/> */}
-        <Work/>
+          <Languages/>
         
       </TabPanel>
       <TabPanel value={value} index={1} >

@@ -24,7 +24,7 @@ const Main = ({data}) => {
     const [value , setvalue] = useState('')
 
     const handleChange = val => {
-        setvalue(val)
+        setvalue(val) 
         console.log(val);   
     }
 

@@ -1,27 +1,17 @@
-import React,{useState} from 'react'
-import CheckBox from '../../util/checkBox'
-import LineBreak from '../../util/lineBreak';
-import TextArea from '../../util/textArea';
+import React from 'react'
+import Main from '../../util/makeComponent/main'
 
 const Objective = () => {
 
-    const [value , setvalue] = useState('')
-
-    const handleChange = val => {
-        setvalue(val)
-        console.log(val);   
+    
+    const data = {
+        name : 'Objective',
+        showBtn : false ,
+        textFields : [ 'Objective header' ],     
     }
 
-    let tabName = 'Objective';
-
     return ( 
-        <div>
-            <CheckBox label={value? value: tabName} handleChange={handleChange}/>
-
-            <LineBreak/>
-           
-            <TextArea label={tabName} />
-        </div>
+            <Main data={data}/> 
     )
 }
 

@@ -1,10 +1,11 @@
 import React from 'react'
+import SecondaryComponent from '../../util/makeComponent/secondaryComponent/secondary'
+
 
 const Hobbies = () => {
+    
     return (
-        <div>
-             <h1> I Am Hobbies </h1>
-        </div>
+        <SecondaryComponent label='Hobbies' />
     )
 }
 

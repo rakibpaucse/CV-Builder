@@ -16,8 +16,10 @@ const useStyles = makeStyles((theme) => ({
         marginLeft : '-12px'
   },
   heading: {
-    fontSize: theme.typography.pxToRem(15),
+    margin: '0 auto',
+    fontSize: theme.typography.pxToRem(20),
     fontWeight: theme.typography.fontWeightRegular,
+    color:'#df143c'
   },
   gridRoot : {
      flexGrow:1
@@ -30,7 +32,7 @@ const WorkComponent = ({TabName  , textFields , showBtn}) => {
     const CollapseComponents = []
     const UnCollapseComponents = []
 
-    textFields.map( tf => 
+     textFields.map( tf => 
         {  
         
                 if (typeof(tf) === 'object')
@@ -66,51 +68,7 @@ const WorkComponent = ({TabName  , textFields , showBtn}) => {
                 <div className={classes.gridRoot}>
                     <Grid container spacing={3}>
 
-
-
-                        {/* {
-                            textFields.map( tf => {
-                                if(tf.length > 1) {
-
-                                    let divValue = 12 /  tf.length;
-
-                                        <Grid item xs={divValue}>
-                                            <Textfield label={tf}/>
-                                        </Grid>
-
-                                } else {
-                                        <Grid item xs={12}>
-                                            <Textfield label={tf}/>
-                                        </Grid> 
-                                }
-                            })
-                        } */}
-
-
-
                         {UnCollapseComponents } { CollapseComponents}
-
-
-
-
-                        {/* <Grid item xs={12}>
-                            <Textfield label='Name'/>
-                        </Grid> 
-
-                        <Grid item xs={12}>
-                            <Textfield label='Role'/>
-                        </Grid> 
-
-                        {/* <Grid item xs={12}> */}
-
-                            {/* <Grid item xs={6}>
-                                <Textfield label='Start Date'/>
-                            </Grid> 
-                            <Grid item xs={6}>
-                                <Textfield label='End Date'/>   
-                            </Grid>  */}
-                             
-                        {/* </Grid>  */}
 
                         <Grid item xs={12}>
                             <TextArea label={TabName}/>

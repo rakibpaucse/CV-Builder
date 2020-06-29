@@ -7,7 +7,8 @@ const style = {
         background : '#EAEAEA',
         border:'none',
         padding:20,
-        fontSize: 15
+        fontSize: 15,
+        textAlign : 'center'
     }
 
 const TextArea = ({label}) => {
