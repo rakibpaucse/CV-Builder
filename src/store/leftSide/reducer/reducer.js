@@ -1,23 +1,49 @@
 import { ADD_TAB_VALUE , ADD_INPUT_VALUE } from '../action/actionTypes'
-import info from '../../../constant/index'
+import info from '../../../constant/jsonFile'
 
 const initial_state =  info;
 
 const reducer = ( state = initial_state , action ) => {
 
+    console.log(action);
+    
+//  action: {
+//      type : ADD_INPUT_VALUE ,
+//      value : 'https://www.example.me',
+//      path : 'state[0].items[0].photoUrl'
+//  }
+
+        const tab = action.tab 
+        const path = action.path
+        const value = action.value
+
+
     switch(action.type) {
-
-
+        
         case ADD_INPUT_VALUE : {
-           let a = state[0].items[0]
-           console.log(a);
-           
             return {
-                ...state ,
-                a : {
-                    photoUrl : action.value
+                ...state , 
+                [tab] : {
+                    ...state[tab],
+                        items : {
+                           ...state[tab].items , 
+                           [path] : value
+                       }
+
+                    
                 }
-            }
+        }
+
+
+
+            // return [
+
+            //     {...state },
+            //     state.profile[items][photoUrl] : 'rakib'
+            // ]
+                // state[0].items[0].photoUrl = action.value
+            
+
         }
 
         case ADD_TAB_VALUE : {

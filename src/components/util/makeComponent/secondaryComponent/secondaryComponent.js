@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
         marginLeft : '-12px'
         },
     heading: {
-        margin: '0 auto',
+        margin: '0 auto', 
         fontSize: theme.typography.pxToRem(20),
         fontWeight: theme.typography.fontWeightRegular,
         color:'#df143c'
@@ -53,7 +53,7 @@ const SecondaryComponent = ({label}) => {
                   
                     <Grid container spacing={3} style={{flexGrow : 1}}>
                         <Grid item xs={10}>
-                            <Textfield label={label} />
+                            <Textfield label={label} tab={label} placeholder={label}/>
                         </Grid>
                         <Grid item xs={2} className={classes.grid}>
                             <IconButton className={classes.iconbtn}>

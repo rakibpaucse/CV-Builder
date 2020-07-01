@@ -27,14 +27,20 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-const Textfield = ({label , placeholder}) => {
+const Textfield = ({label , placeholder , tab }) => {
     const classes = useStyles();
     const dispatch = useDispatch();
     
     const onChange = e => {
-        dispatch(addInputValue({value:e.target.value , path: 'state[0].items[0].photoUrl'}))
-    }
+console.log(e.target);
 
+        dispatch(addInputValue({
+            value:e.target.value ,
+            path: e.target.attributes.placeholder.value,
+            tab : tab
+            }))
+    }
+//labels[0].textContent
 
 
    return (
@@ -42,9 +48,10 @@ const Textfield = ({label , placeholder}) => {
                 <TextField
                     className={classes.input}
                     id="input-with-icon-textfield"
+                    // onBlur = {onChange}
+                    placeholder={label}
                     onChange = {onChange}
-                    label={label}
-                    placeholder={placeholder}
+                    label={label}                
                     InputLabelProps={{
                         className: classes.label 
                       }}

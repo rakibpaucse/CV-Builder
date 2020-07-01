@@ -4,7 +4,7 @@ import Main from '../../util/makeComponent/main'
 
 const Awards = () => {
     const data = {
-        name : 'Honors & Awards',
+        name : 'Awards',
         showBtn : true ,
         textFields : [ 'Title' , 'Subtitle' ],
         

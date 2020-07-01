@@ -28,25 +28,25 @@ const useStyles = makeStyles((theme) => ({
 
 const WorkComponent = ({TabName  , textFields , showBtn}) => {
     const classes = useStyles();
+const tab = TabName
 
     const CollapseComponents = []
     const UnCollapseComponents = []
 
      textFields.map( tf => 
         {  
-        
+               
                 if (typeof(tf) === 'object')
                 {
                     let divValue = 12 /  tf.length;
-
                     tf.map( field =>  CollapseComponents.push(<Grid item xs={divValue}>
-                                                                <Textfield label={field}/>
+                                                                <Textfield label={field} tab={tab} />
                                                             </Grid>))
 
 
                 } else {
                     UnCollapseComponents.push(<Grid item xs={12}>
-                                                    <Textfield label={tf}/>
+                                                    <Textfield label={tf} tab={tab} />
                                                 </Grid> )
                 }
        })

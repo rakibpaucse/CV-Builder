@@ -12,45 +12,46 @@ const design = {
 }
 
 const Profile = () => {
+    const tabName = 'profile'
     return (
         <div style={design}>
         <Grid container spacing={3}>
         
           <Grid item xs={12}>  
-              <TextField label='Photo Url' placeholder=' https://randomPhoto.me' />
+              <TextField label='Photo Url'  tab = {tabName}/>
           </Grid>
 
           <LineBreak />
 
           <Grid item xs={6}> 
-              <TextField label='First Name' placeholder=' Nazrul ' />
+              <TextField label='First Name'  tab = {tabName}/>
           </Grid>
           <Grid item xs={6}> 
-              <TextField label='Last Name' placeholder=' Islam ' />
+              <TextField label='Last Name'  tab = {tabName}/>
           </Grid>
           <Grid item xs={10}> 
-              <TextField label='Occupation' placeholder=' Student ' />
+              <TextField label='Occupation'  tab = {tabName}/>
           </Grid>
 
           <LineBreak/>
 
           <Grid item xs={12}>  
-              <TextField label='Parmanent Address' placeholder=' Noakhali , Chottogram' />
+              <TextField label='Parmanent Address'  tab = {tabName}/>
           </Grid>
           <Grid item xs={12}>
-              <TextField label='Current Address ' placeholder=' Dhaka Cantonment' />
+              <TextField label='Current Address '  tab = {tabName}/>
           </Grid>
 
           <LineBreak/>
 
           <Grid item xs={12}>
-              <TextField label='Phone Number' placeholder=' 01521333799 ' />
+              <TextField label='Phone Number'  tab = {tabName}/>
           </Grid>
           <Grid item xs={12}>
-              <TextField label='Website' placeholder=' https://www.ami.me' />
+              <TextField label='Website'  tab = {tabName}/>
           </Grid>
           <Grid item xs={12}>
-              <TextField label='Email' placeholder=' rakibpaucse@gmail.com' />
+              <TextField label='Email'  tab = {tabName}/>
           </Grid>
 
           </Grid>

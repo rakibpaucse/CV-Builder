@@ -1,4 +1,4 @@
- let info  = [
+ const info  = [
     { 
         title : 'profile' , 
         items : [ { photoUrl : '' , firstName : '' , lastName : '' , occupation : '' , parmanentAddress : '' , currentAddress : '' , phoneNumber : '' , website : '' , emailAddress : ''} ]
