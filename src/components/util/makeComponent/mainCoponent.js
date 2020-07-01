@@ -9,7 +9,11 @@ import Grid from '@material-ui/core/Grid';
 import Textfield from '../textfield';
 import TextArea from '../textArea'
 import { Button } from '@material-ui/core';
+import {  useDispatch , useSelector } from 'react-redux'
+import { addlistItem } from '../../../store/leftSide/action/actionCreators'
+import { resetObj } from '../camelCaseMaker'
 
+ 
 const useStyles = makeStyles((theme) => ({
   root: {
         width: '108%',
@@ -25,15 +29,26 @@ const useStyles = makeStyles((theme) => ({
      flexGrow:1
   }
 }));
-
-const WorkComponent = ({TabName  , textFields , showBtn}) => {
+ 
+const MainComponent = ({ id , TabName  , textFields , showBtn}) => {
     const classes = useStyles();
-const tab = TabName
+    const dispatch = useDispatch();
+    const stateLabelkey = useSelector(state => Object.keys(state)[id])
+    const stateLabelValue = useSelector(state => state[stateLabelkey].items)
 
+    const tab = TabName
     const CollapseComponents = []
     const UnCollapseComponents = []
 
-     textFields.map( tf => 
+
+       console.log(stateLabelValue , tab);
+
+       const handleClick = () => {
+        dispatch(addlistItem({item : stateLabelValue , tab : tab}))
+        
+    }
+
+    textFields.map( tf => 
         {  
                
                 if (typeof(tf) === 'object')
@@ -50,8 +65,6 @@ const tab = TabName
                                                 </Grid> )
                 }
        })
-
-
     return (
 
     <div className={classes.root}>
@@ -76,8 +89,8 @@ const tab = TabName
                     </Grid>
 
                             {
-                                showBtn &&  <Button variant="contained" color="primary" href="#contained-buttons">
-                                                    Link
+                                showBtn &&  <Button variant="contained" color="primary" href="#contained-buttons" onClick={handleClick}>
+                                                    Add
                                             </Button>
                             }
                 </div>
@@ -88,4 +101,4 @@ const tab = TabName
     )
 }
 
-export default WorkComponent
+export default MainComponent

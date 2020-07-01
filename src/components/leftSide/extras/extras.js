@@ -4,7 +4,8 @@ import Main from '../../util/makeComponent/main'
 
 const Extras = () => {
     const data = {
-        name : 'Extra Curriculam Activities ',
+        id : 10 ,
+        name : 'Extra_curriculam',
         showBtn : true ,
         textFields : [ 'Curriculam Name ' , 'Curriculam Details' ],
         

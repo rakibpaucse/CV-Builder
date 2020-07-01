@@ -5,6 +5,7 @@ const Objective = () => {
 
     
     const data = {
+        id : 1 ,
         name : 'Objective',
         showBtn : false ,
         textFields : [ 'Objective header' ],     

@@ -8,46 +8,45 @@ const info  = {
         items : { shouldShow : false , objectiveHeader : ''}
     } , 
 
-     workExperience : { 
+     work_experience : { 
        
-        items :  { shouldShow : false , experiences : [] , orgName : '' , role : '' , startDate : '' , endDate : '' , description : '' } 
+        items :  { shouldShow : false , list : [] , orgName : '' , role : '' , startDate : '' , endDate : '' , description : '' } 
     } , 
     education : { 
         
-        items :  { shouldShow : false , educations : [] , institutionName : '' , major : '' , grade : '' , startDate : '' , endDate : '' , description : '' } 
+        items :  { shouldShow : false , list : [] , institutionName : '' , major : '' , grade : '' , startDate : '' , endDate : '' , description : '' } 
     } , 
     awards :  { 
     
-        items :  { shouldShow : false , awards : [] ,title : '' , subitle : '' , description : '' } 
+        items :  { shouldShow : false , list : [] ,title : '' , subitle : '' , description : '' } 
     } , 
     certifications : { 
         
-        items :  { shouldShow : false , certifications : [] , name : '' , authority : '' , description : '' } 
+        items :  { shouldShow : false , list : [] , name : '' , authority : '' , description : '' } 
     } , 
     skill : { 
        
-        items :  { shouldShow : false , skills : [] , skill : '' } 
+        items :  { shouldShow : false , list : [] , skill : '' } 
     } , 
     hobby :  { 
        
-        items :  { shouldShow : false , hobbies : [] , hobby : '' } 
+        items :  { shouldShow : false , list : [] , hobby : '' } 
     } , 
     languages : { 
         
-        items :  { shouldShow : false , languages : [] , languageName : '' , level : '' , rateYourself : '' } 
+        items :  { shouldShow : false , list : [] , languageName : '' , level : '' , rating : '' } 
     } , 
     references : { 
         
-        items :  { shouldShow : false , references : [] , name : '' , position : '' , phoneNumber : '' ,  emailAddress : '' , description : '' } 
+        items :  { shouldShow : false , list : [] , name : '' , position : '' , phoneNumber : '' ,  emailAddress : '' , description : '' } 
     } ,
-    extras : { 
+    extra_curriculam : { 
         
-        items :  { shouldShow : false , extras : [] , curricilamName : '' , curriculamDetails: '' , description : '' } 
+        items :  { shouldShow : false , list : [] , curriculamName : '' , curriculamDetails: '' , description : '' } 
     } 
 }
 
 const newState = JSON.parse(JSON.stringify(info));
-console.log(newState);
 
 
 export default newState ;

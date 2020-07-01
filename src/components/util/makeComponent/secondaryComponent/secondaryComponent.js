@@ -7,6 +7,10 @@ import { makeStyles } from '@material-ui/core/styles';
 import {  IconButton , Grid} from '@material-ui/core';
 import AddBoxIcon from '@material-ui/icons/AddBox';
 
+import {  useDispatch , useSelector } from 'react-redux'
+import { addlistItem } from '../../../../store/leftSide/action/actionCreators'
+import { resetObj } from '../../camelCaseMaker'
+
 import Textfield from '../../textfield';
 
 
@@ -36,10 +40,18 @@ const useStyles = makeStyles((theme) => ({
 
 const SecondaryComponent = ({label}) => {
     const classes = useStyles();
+    const dispatch = useDispatch();
+    const stateLabelValue = useSelector(state => state[label].items)
+    console.log(stateLabelValue , label);
+    
 
+    const handleClick = () => {
+        dispatch(addlistItem({item : stateLabelValue , tab : label}))
+    }
+ 
     return (
         <div className={classes.root}>
-        <ExpansionPanel>
+        <ExpansionPanel> 
 
             <ExpansionPanelSummary
                 expandIcon={<ExpandMoreIcon />}
@@ -57,7 +69,7 @@ const SecondaryComponent = ({label}) => {
                         </Grid>
                         <Grid item xs={2} className={classes.grid}>
                             <IconButton className={classes.iconbtn}>
-                                <AddBoxIcon className={classes.icon} />
+                                <AddBoxIcon className={classes.icon} onClick={() => handleClick()}/>
                             </IconButton>
                         </Grid>
                     </Grid>

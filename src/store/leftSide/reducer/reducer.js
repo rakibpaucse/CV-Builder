@@ -1,26 +1,25 @@
-import { ADD_TAB_VALUE , ADD_INPUT_VALUE } from '../action/actionTypes'
+import {
+        ADD_TAB_VALUE , 
+        ADD_INPUT_VALUE , 
+        ADD_LIST_ITEM , 
+        RESET_OBJ ,
+        } from '../action/actionTypes'
+        
 import info from '../../../constant/jsonFile'
+import {renameObjectKey , resetObj } from '../../../components/util/camelCaseMaker'
 
 const initial_state =  info;
 
 const reducer = ( state = initial_state , action ) => {
 
-    console.log(action);
-    
-//  action: {
-//      type : ADD_INPUT_VALUE ,
-//      value : 'https://www.example.me',
-//      path : 'state[0].items[0].photoUrl'
-//  }
-
-        const tab = action.tab 
-        const path = action.path
-        const value = action.value
-
-
     switch(action.type) {
         
         case ADD_INPUT_VALUE : {
+
+                const tab = action.tab 
+                const path = action.path
+                const value = action.value
+
             return {
                 ...state , 
                 [tab] : {
@@ -28,35 +27,50 @@ const reducer = ( state = initial_state , action ) => {
                         items : {
                            ...state[tab].items , 
                            [path] : value
-                       }
-
-                    
+                        }    
+                    }
                 }
-        }
-
-
-
-            // return [
-
-            //     {...state },
-            //     state.profile[items][photoUrl] : 'rakib'
-            // ]
-                // state[0].items[0].photoUrl = action.value
-            
-
         }
 
         case ADD_TAB_VALUE : {
+            const oldKey = action.oldValue 
+            const newKey = action.value
             
-            let b = action.path
-                return {
-                    ...state ,
-                    [b] : action.value
-                }
+            state = renameObjectKey(state , oldKey , newKey)
+            
+            return state
             
         }
 
-        default : { 
+        case ADD_LIST_ITEM : {
+            const item = action.item 
+            const tab = action.tab     
+            return {
+                ...state ,
+                [tab] : {
+                    ...state[tab],
+                    items : {
+                        ...state[tab].items,
+                        list : [...state[tab].items.list ,item]
+                    }
+                }
+            }
+            
+        }
+
+        case RESET_OBJ : {
+            let tab = action.tab
+            let resetedState = resetObj(state[tab].items)
+            console.log(resetedState);
+            
+            return state
+        }
+
+
+
+
+
+        default : {  
             return state
         }
     } 

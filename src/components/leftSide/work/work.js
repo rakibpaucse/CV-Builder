@@ -58,7 +58,8 @@ import Main from '../../util/makeComponent/main'
 const Work = () => {
 
     const data = {
-        name : 'Work Experience',
+        id : 2,
+        name : 'Work_Experience',
         showBtn : true ,
         textFields : [ 'Org Name' , 'Role' , [  'Start Date ' , 'End Date']],
         

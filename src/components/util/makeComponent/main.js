@@ -6,31 +6,31 @@ import CheckBox from '../checkBox';
 import LineBreak from '../lineBreak';
 import MainComponent from './mainCoponent';
 
+import { addTabValue } from '../../../store/leftSide/action/actionCreators'
+import {  useDispatch , useSelector } from 'react-redux'
 
 
 
-const useStyles = makeStyles((theme) => ({
-
-container : {  
-                padding:0,
-            }
-  
-}));
 
 
 const Main = ({data}) => {
-    
-    const classes = useStyles();
-    const [value , setvalue] = useState('')
 
-    const handleChange = val => {
-        setvalue(val) 
-        console.log(val);   
-    }
-
+    const id = data.id
     const TabName = data.name;
     const textFields = data.textFields
     const showBtn = data.showBtn
+    
+    const [value , setvalue] = useState('')
+    const dispatch = useDispatch();
+    const label = useSelector( state => Object.keys(state)[id])
+
+    const handleChange = val => {
+        setvalue(val) 
+        dispatch(addTabValue({ oldValue :label , value : val}))
+
+    }
+
+ 
     
 
     return (
@@ -39,7 +39,7 @@ const Main = ({data}) => {
             <LineBreak/>
 
             <Container maxWidth="sm" >
-               <MainComponent   TabName={TabName}  textFields={textFields} showBtn={showBtn}/>
+               <MainComponent  id={id} TabName={label}  textFields={textFields} showBtn={showBtn}/>
             </Container>
         </div>
     )

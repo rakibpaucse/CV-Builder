@@ -32,7 +32,6 @@ const Textfield = ({label , placeholder , tab }) => {
     const dispatch = useDispatch();
     
     const onChange = e => {
-console.log(e.target);
 
         dispatch(addInputValue({
             value:e.target.value ,

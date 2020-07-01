@@ -4,6 +4,7 @@ import Main from '../../util/makeComponent/main'
 const Certifications = () => {
 
     const data = {
+        id : 5 ,
         name : 'Certification',
         showBtn : true ,
         textFields : [ 'Name' , 'Authority' ,],

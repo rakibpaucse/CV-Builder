@@ -27,10 +27,10 @@ const Pages = () => {
     return (
             <div className={classes.root}>
                 <Grid container spacing={3}>
-                    <Grid item xs={3}>
+                    <Grid item xs={6}>
                         <LeftSide className={classes.paper}>xs=12</LeftSide>
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item xs={3}>
                         <ShowCase className={classes.paper}>xs=6</ShowCase>
                     </Grid>
                     <Grid item xs={3}>

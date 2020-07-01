@@ -2,19 +2,24 @@ import React,{useState} from 'react'
 import CheckBox from '../../checkBox';
 import LineBreak from '../../lineBreak';
 import SecComp from './secondaryComponent'
+import { addTabValue } from '../../../../store/leftSide/action/actionCreators'
+import {  useDispatch } from 'react-redux'
 
 import { Container } from '@material-ui/core'
 
 
 
 
-const SecondaryComponent = ({label}) => {
+const Secondary = ({label}) => {
     const [value , setvalue] = useState('')
-
+    const dispatch = useDispatch();
+     
     const handleChange = val => {
-        setvalue(val)
-        console.log(val);   
+        setvalue(val)        
+        dispatch(addTabValue({ oldValue :label , value : val}))
     }
+
+
     return (
         <div>
             <CheckBox label={value? value: label} handleChange={handleChange}/>
@@ -31,4 +36,4 @@ const SecondaryComponent = ({label}) => {
     )
 }
 
-export default SecondaryComponent
+export default Secondary
