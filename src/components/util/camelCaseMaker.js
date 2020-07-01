@@ -34,16 +34,15 @@ console.log(newObj);
 
 
 export const resetObj = current => {
-console.log('in rest' , current);
 
     for (var key in current){
         if (current.hasOwnProperty(key)){
-            if (typeof current[key] === 'string'){
-                current[key] = '';
+            
+            if (typeof current[key] === 'string'){ 
+                current[key] = '';               
             }
         }
     }
-    console.log('in rest' , current);
 
     return current
 

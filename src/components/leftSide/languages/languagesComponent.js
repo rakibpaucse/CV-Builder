@@ -8,7 +8,6 @@ import Rating from '@material-ui/lab/Rating';
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import {  useDispatch , useSelector } from 'react-redux'
 import { addlistItem ,
-         addRatingValue ,
          addInputValue,
          resetObj
     } from '../../../store/leftSide/action/actionCreators'

@@ -19,7 +19,7 @@ const Secondary = ({label}) => {
         dispatch(addTabValue({ oldValue :label , value : val}))
     }
 
-
+ 
     return (
         <div>
             <CheckBox label={value? value: label} handleChange={handleChange}/>

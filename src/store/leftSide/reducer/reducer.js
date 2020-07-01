@@ -63,7 +63,13 @@ const reducer = ( state = initial_state , action ) => {
             let resetedState = resetObj(state[tab].items)
             console.log(resetedState);
             
-            return state
+            return {
+                ...state ,
+                [tab] : {
+                    ...state[tab],
+                    items : resetedState
+                }
+            }
         }
 
 

@@ -11,7 +11,7 @@ import TextArea from '../textArea'
 import { Button } from '@material-ui/core';
 import {  useDispatch , useSelector } from 'react-redux'
 import { addlistItem } from '../../../store/leftSide/action/actionCreators'
-import { resetObj } from '../camelCaseMaker'
+import { resetObj } from '../../../store/leftSide/action/actionCreators'
 
  
 const useStyles = makeStyles((theme) => ({
@@ -41,11 +41,11 @@ const MainComponent = ({ id , TabName  , textFields , showBtn}) => {
     const UnCollapseComponents = []
 
 
-       console.log(stateLabelValue , tab);
+    //    console.log(stateLabelValue , tab);
 
        const handleClick = () => {
         dispatch(addlistItem({item : stateLabelValue , tab : tab}))
-        
+        dispatch (resetObj({tab: tab}))
     }
 
     textFields.map( tf => 
@@ -84,7 +84,7 @@ const MainComponent = ({ id , TabName  , textFields , showBtn}) => {
                         {UnCollapseComponents } { CollapseComponents}
 
                         <Grid item xs={12}>
-                            <TextArea label={TabName}/>
+                            <TextArea label={TabName} />
                         </Grid>  
                     </Grid>
 

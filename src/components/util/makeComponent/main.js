@@ -8,6 +8,7 @@ import MainComponent from './mainCoponent';
 
 import { addTabValue } from '../../../store/leftSide/action/actionCreators'
 import {  useDispatch , useSelector } from 'react-redux'
+import ListItem from './listItem';
 
 
 
@@ -23,6 +24,7 @@ const Main = ({data}) => {
     const [value , setvalue] = useState('')
     const dispatch = useDispatch();
     const label = useSelector( state => Object.keys(state)[id])
+    const fullList = useSelector( state => state[label].items.list)
 
     const handleChange = val => {
         setvalue(val) 
@@ -30,15 +32,21 @@ const Main = ({data}) => {
 
     }
 
- 
-    
+    console.log(fullList)
+     
 
     return (
         <div>
+
+
             <CheckBox label={value? value: TabName} handleChange={handleChange}/>
             <LineBreak/>
 
             <Container maxWidth="sm" >
+                {
+                    fullList.map(listItem => <ListItem itemData={listItem}/> )
+                 }
+
                <MainComponent  id={id} TabName={label}  textFields={textFields} showBtn={showBtn}/>
             </Container>
         </div>

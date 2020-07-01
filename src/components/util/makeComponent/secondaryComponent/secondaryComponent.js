@@ -9,7 +9,7 @@ import AddBoxIcon from '@material-ui/icons/AddBox';
 
 import {  useDispatch , useSelector } from 'react-redux'
 import { addlistItem } from '../../../../store/leftSide/action/actionCreators'
-import { resetObj } from '../../camelCaseMaker'
+import { resetObj } from '../../../../store/leftSide/action/actionCreators'
 
 import Textfield from '../../textfield';
 
@@ -47,6 +47,8 @@ const SecondaryComponent = ({label}) => {
 
     const handleClick = () => {
         dispatch(addlistItem({item : stateLabelValue , tab : label}))
+        dispatch (resetObj({tab: label}))
+
     }
  
     return (

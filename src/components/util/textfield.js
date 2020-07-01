@@ -3,8 +3,9 @@ import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import SubdirectoryArrowRightIcon from '@material-ui/icons/SubdirectoryArrowRight';
 import InputAdornment from '@material-ui/core/InputAdornment';
-import { useDispatch } from 'react-redux'
+import { useDispatch , useSelector} from 'react-redux'
 import {addInputValue} from '../../store/leftSide/action/actionCreators'
+import {camalCaseMaker} from '../util/camelCaseMaker'
 
 const useStyles = makeStyles((theme) => ({
 
@@ -30,7 +31,9 @@ const useStyles = makeStyles((theme) => ({
 const Textfield = ({label , placeholder , tab }) => {
     const classes = useStyles();
     const dispatch = useDispatch();
-    
+    const stateLabelValue = useSelector(state => state[camalCaseMaker(tab)].items[camalCaseMaker(label)])
+
+
     const onChange = e => {
 
         dispatch(addInputValue({
@@ -39,7 +42,6 @@ const Textfield = ({label , placeholder , tab }) => {
             tab : tab
             }))
     }
-//labels[0].textContent
 
 
    return (
@@ -50,7 +52,8 @@ const Textfield = ({label , placeholder , tab }) => {
                     // onBlur = {onChange}
                     placeholder={label}
                     onChange = {onChange}
-                    label={label}                
+                    label={label}   
+                    value={stateLabelValue}             
                     InputLabelProps={{
                         className: classes.label 
                       }}

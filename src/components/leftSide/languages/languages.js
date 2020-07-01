@@ -19,7 +19,6 @@ const Languages = () => {
 
     }
 
-    // const label = 'Language'
 
     return (
         <div>
