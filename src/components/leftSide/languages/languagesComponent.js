@@ -8,10 +8,11 @@ import Rating from '@material-ui/lab/Rating';
 import AddBoxIcon from '@material-ui/icons/AddBox';
 import {  useDispatch , useSelector } from 'react-redux'
 import { addlistItem ,
-         addInputValue,
+         addRatingValue,
          resetObj
     } from '../../../store/leftSide/action/actionCreators'
-// import { resetObj } from '../../util/camelCaseMaker'
+
+import ListItem from '../../util/makeComponent/listItem'
 
 import Textfield from '../../util/textfield';
 
@@ -46,6 +47,7 @@ const LanguagesComponent = ({label}) => {
     const [ratingValue, setRatingValue] = useState(2);
     const dispatch = useDispatch();
     const stateLabelValue = useSelector(state => state[label].items)
+    const fullList = useSelector(state => state[label].items.list)
 
 
     const handleClick = () => {
@@ -69,6 +71,13 @@ const LanguagesComponent = ({label}) => {
 
             <ExpansionPanelDetails>
                 <Grid container spacing={3}>
+
+                    <Grid item xs={12}>
+                        {
+                             fullList.map(listItem => <ListItem itemData={listItem}/> )
+                        }
+                    </Grid>
+
                     <Grid item xs={12}>
                         <Textfield label='Language Name' tab={label}/>
                     </Grid>
@@ -85,7 +94,7 @@ const LanguagesComponent = ({label}) => {
                             value={ratingValue} 
                             onChange={(event, newValue) => {
                                 setRatingValue(newValue);
-                                dispatch(addInputValue({ path : 'rating' , tab: 'languages', value:{newValue}}))
+                                dispatch(addRatingValue({ path : 'rating' , tab: 'languages', value:{newValue}}))
                                 }}/>
                          </Grid>
                     </Grid>

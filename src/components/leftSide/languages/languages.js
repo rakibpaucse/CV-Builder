@@ -4,6 +4,7 @@ import LineBreak from '../../util/lineBreak';
 import SecComp from './languagesComponent'
 import { addTabValue } from '../../../store/leftSide/action/actionCreators'
 
+
 import { Container } from '@material-ui/core'
 import {  useDispatch , useSelector } from 'react-redux'
 
@@ -27,6 +28,8 @@ const Languages = () => {
 
             
             <Container maxWidth="sm" >
+
+                
                 <SecComp label={label}/>
             </Container>
 

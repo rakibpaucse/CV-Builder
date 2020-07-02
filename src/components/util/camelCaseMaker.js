@@ -1,4 +1,22 @@
+export const nonCamelCaseMaker = text => {
+    const data = []   
+    var nonCamelCase = []
 
+    for( var i = 0 ; i < text.length ; i++){
+      data.push(text[i])
+    }
+    
+    data.map( dt  => ((dt.charCodeAt(0) > 65) && (dt.charCodeAt(0) < 90)) ? 
+        nonCamelCase.push(` ${dt}`) : nonCamelCase.push(dt)  
+    )
+    
+    nonCamelCase = nonCamelCase.join('')
+    nonCamelCase = nonCamelCase.charAt(0).toUpperCase() + nonCamelCase.slice(1)
+
+   
+    return nonCamelCase;
+  }
+  
 
 export const camalCaseMaker = text => {
 
@@ -47,3 +65,6 @@ export const resetObj = current => {
     return current
 
 }
+
+
+

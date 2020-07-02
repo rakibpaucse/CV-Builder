@@ -42,7 +42,6 @@ const SecondaryComponent = ({label}) => {
     const classes = useStyles();
     const dispatch = useDispatch();
     const stateLabelValue = useSelector(state => state[label].items)
-    console.log(stateLabelValue , label);
     
 
     const handleClick = () => {

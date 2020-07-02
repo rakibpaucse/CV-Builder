@@ -61,7 +61,6 @@ const reducer = ( state = initial_state , action ) => {
         case RESET_OBJ : {
             let tab = action.tab
             let resetedState = resetObj(state[tab].items)
-            console.log(resetedState);
             
             return {
                 ...state ,

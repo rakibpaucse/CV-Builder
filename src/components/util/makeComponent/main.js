@@ -1,13 +1,11 @@
 import React,{useState} from 'react'
 import { Container } from '@material-ui/core'
-import { makeStyles } from '@material-ui/core/styles';
+import {  useDispatch , useSelector } from 'react-redux'
 
 import CheckBox from '../checkBox';
 import LineBreak from '../lineBreak';
 import MainComponent from './mainCoponent';
-
 import { addTabValue } from '../../../store/leftSide/action/actionCreators'
-import {  useDispatch , useSelector } from 'react-redux'
 import ListItem from './listItem';
 
 
@@ -32,7 +30,7 @@ const Main = ({data}) => {
 
     }
 
-    console.log(fullList)
+    // console.log(fullList)
      
 
     return (
@@ -44,7 +42,7 @@ const Main = ({data}) => {
 
             <Container maxWidth="sm" >
                 {
-                    fullList.map(listItem => <ListItem itemData={listItem}/> )
+                    showBtn && fullList.map(listItem => <ListItem itemData={listItem}/> )
                  }
 
                <MainComponent  id={id} TabName={label}  textFields={textFields} showBtn={showBtn}/>

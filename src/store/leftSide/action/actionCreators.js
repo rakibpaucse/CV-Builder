@@ -2,12 +2,12 @@ import { ADD_TAB_VALUE ,
          ADD_INPUT_VALUE , 
          ADD_LIST_ITEM , 
         RESET_OBJ,
-       
+        ADD_RATING_VALUE
      } from './actionTypes'
 
 import {camalCaseMaker} from '../../../components/util/camelCaseMaker'
 
-
+ 
 
 export const addInputValue = tabObj => ({
     type : ADD_INPUT_VALUE ,
@@ -34,4 +34,12 @@ export const addlistItem = tabObj => ({
 export const resetObj = tabObj => ({
     type : RESET_OBJ ,
     tab : tabObj.tab
+})
+
+
+export const addRatingValue = tabObj => ({
+    type : ADD_INPUT_VALUE ,
+    path : camalCaseMaker(tabObj.path) ,
+    tab : camalCaseMaker(tabObj.tab) , 
+    value : tabObj.value.newValue
 })
