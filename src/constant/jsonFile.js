@@ -5,44 +5,44 @@ const info  = {
 
     objective : { 
          
-        items : { shouldShow : false , objectiveHeader : ''}
+        items : { shouldshow : false , objectiveHeader : ''}
     } , 
 
      work_experience : { 
        
-        items :  { shouldShow : false , list : [] , orgName : '' , role : '' , startDate : '' , endDate : '' , description : '' } 
+        items :  { shouldshow : false , list : [] , orgName : '' , role : '' , startDate : '' , endDate : '' , description : '' } 
     } , 
     education : { 
         
-        items :  { shouldShow : false , list : [] , institutionName : '' , major : '' , grade : '' , startDate : '' , endDate : '' , description : '' } 
+        items :  { shouldshow : false , list : [] , institutionName : '' , major : '' , grade : '' , startDate : '' , endDate : '' , description : '' } 
     } , 
     awards :  { 
     
-        items :  { shouldShow : false , list : [] ,title : '' , subitle : '' , description : '' } 
+        items :  { shouldshow : false , list : [] ,title : '' , subitle : '' , description : '' } 
     } , 
     certifications : { 
         
-        items :  { shouldShow : false , list : [] , name : '' , authority : '' , description : '' } 
+        items :  { shouldshow : false , list : [] , name : '' , authority : '' , description : '' } 
     } , 
     skill : { 
        
-        items :  { shouldShow : false , list : [] , skill : '' } 
+        items :  { shouldshow : false , list : [] , skill : '' } 
     } , 
     hobby :  { 
        
-        items :  { shouldShow : false , list : [] , hobby : '' } 
+        items :  { shouldshow : false , list : [] , hobby : '' } 
     } , 
     languages : { 
         
-        items :  { shouldShow : false , list : [] , languageName : '' , level : '' , rating : '' } 
+        items :  { shouldshow : false , list : [] , languageName : '' , level : '' , rating : '' } 
     } , 
     references : { 
         
-        items :  { shouldShow : false , list : [] , name : '' , position : '' , phoneNumber : '' ,  emailAddress : '' , description : '' } 
+        items :  { shouldshow : false , list : [] , name : '' , position : '' , phoneNumber : '' ,  emailAddress : '' , description : '' } 
     } ,
     extra_curriculam : { 
         
-        items :  { shouldShow : false , list : [] , curriculamName : '' , curriculamDetails: '' , description : '' } 
+        items :  { shouldshow : false , list : [] , curriculamName : '' , curriculamDetails: '' , description : '' } 
     } 
 }
 

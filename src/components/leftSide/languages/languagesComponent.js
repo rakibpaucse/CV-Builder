@@ -12,7 +12,6 @@ import { addlistItem ,
          resetObj
     } from '../../../store/leftSide/action/actionCreators'
 
-import ListItem from '../../util/makeComponent/listItem'
 
 import Textfield from '../../util/textfield';
 
@@ -43,11 +42,11 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const LanguagesComponent = ({label}) => {
+    const [isExpand , setIsExpand] = useState(false)
     const classes = useStyles();
     const [ratingValue, setRatingValue] = useState(2);
     const dispatch = useDispatch();
     const stateLabelValue = useSelector(state => state[label].items)
-    const fullList = useSelector(state => state[label].items.list)
 
 
     const handleClick = () => {
@@ -57,9 +56,11 @@ const LanguagesComponent = ({label}) => {
 
     return (
         <div className={classes.root}>
-        <ExpansionPanel>
-
+            <ExpansionPanel 
+                expanded={isExpand} 
+                >
             <ExpansionPanelSummary
+                onClick={() => setIsExpand(prv => !prv)}  
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"
                 id="panel1a-header"
@@ -72,11 +73,7 @@ const LanguagesComponent = ({label}) => {
             <ExpansionPanelDetails>
                 <Grid container spacing={3}>
 
-                    <Grid item xs={12}>
-                        {
-                             fullList.map(listItem => <ListItem itemData={listItem}/> )
-                        }
-                    </Grid>
+
 
                     <Grid item xs={12}>
                         <Textfield label='Language Name' tab={label}/>
@@ -100,7 +97,7 @@ const LanguagesComponent = ({label}) => {
                     </Grid>
                     <Grid item xs={10} style={{textAlign:'center'}}>
                         <IconButton >
-                                <AddBoxIcon className={classes.icon} onClick={() => handleClick()}/>
+                                <AddBoxIcon className={classes.icon} onClick={() => { setIsExpand(false) ; handleClick() }}/>
                         </IconButton>
                     </Grid>
                 </Grid>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
@@ -32,6 +32,8 @@ const useStyles = makeStyles((theme) => ({
  
 const MainComponent = ({ id , TabName  , textFields , showBtn}) => {
     const classes = useStyles();
+    const [isExpand , setIsExpand] = useState(false)
+
     const dispatch = useDispatch();
     const stateLabelkey = useSelector(state => Object.keys(state)[id])
     const stateLabelValue = useSelector(state => state[stateLabelkey].items)
@@ -68,8 +70,11 @@ const MainComponent = ({ id , TabName  , textFields , showBtn}) => {
     return (
 
     <div className={classes.root}>
-        <ExpansionPanel>
+            <ExpansionPanel 
+                expanded={isExpand}                 
+            >
             <ExpansionPanelSummary
+            onClick={() => setIsExpand(prv => !prv)} 
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1a-content"
             id="panel1a-header"
@@ -89,7 +94,7 @@ const MainComponent = ({ id , TabName  , textFields , showBtn}) => {
                     </Grid>
 
                             {
-                                showBtn &&  <Button variant="contained" color="primary" href="#contained-buttons" onClick={handleClick}>
+                                showBtn &&  <Button variant="contained" color="primary" href="#contained-buttons" onClick={() => { setIsExpand(false) ; handleClick() }}>
                                                     Add
                                             </Button>
                             }

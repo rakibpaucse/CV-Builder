@@ -6,7 +6,7 @@ import Tab from '@material-ui/core/Tab';
 
 import {useSelector , useDispatch } from 'react-redux'
 
-import info from '../../constant/jsonFile'
+import {removeUnderScore} from '../../components/util/camelCaseMaker'
 import Tabpanel from './tabPanel'
 
 
@@ -78,7 +78,7 @@ const LeftSide = () => {
 
 
           {
-            tabName.map( (inf , index) => <Tab className={classes.tab} label={inf} {...allProps(index)} />)
+            tabName.map( (inf , index) => <Tab className={classes.tab} label={removeUnderScore(inf)} {...allProps(index)} />)
           }
 
 

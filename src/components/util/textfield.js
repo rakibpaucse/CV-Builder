@@ -7,6 +7,9 @@ import { useDispatch , useSelector} from 'react-redux'
 import {addInputValue} from '../../store/leftSide/action/actionCreators'
 import {camalCaseMaker} from '../util/camelCaseMaker'
 
+import {Button , IconButton} from '@material-ui/core';
+import PhotoCamera from '@material-ui/icons/PhotoCamera';
+
 const useStyles = makeStyles((theme) => ({
 
   text : {
@@ -49,7 +52,6 @@ const Textfield = ({label , placeholder , tab }) => {
                 <TextField
                     className={classes.input}
                     id="input-with-icon-textfield"
-                    // onBlur = {onChange}
                     placeholder={label}
                     onChange = {onChange}
                     label={label}   
@@ -59,9 +61,14 @@ const Textfield = ({label , placeholder , tab }) => {
                       }}
                     InputProps={{
                     startAdornment: (
+                      <>
                         <InputAdornment position="start">
                             <SubdirectoryArrowRightIcon style={{fill:'currentColor'}}/>
                         </InputAdornment>
+                        {/* <InputAdornment position="end" >
+                             <PhotoCamera />
+                        </InputAdornment> */}
+                      </>
                     ),
                 }} />
             {/* <TextField className={classes.text}  label={label} placeholder={placeholder} variant="outlined" /> */}
@@ -73,3 +80,8 @@ export default Textfield
 
 
 
+{/* <input accept="image/*" className={classes.input} id="icon-button-file" type="file" />
+<label htmlFor="icon-button-file">
+  <IconButton color="primary" aria-label="upload picture" component="span">
+    <PhotoCamera />
+  </IconButton> */}

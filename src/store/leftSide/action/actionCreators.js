@@ -2,7 +2,7 @@ import { ADD_TAB_VALUE ,
          ADD_INPUT_VALUE , 
          ADD_LIST_ITEM , 
         RESET_OBJ,
-        ADD_RATING_VALUE
+        DELETE_LIST_VALUE
      } from './actionTypes'
 
 import {camalCaseMaker} from '../../../components/util/camelCaseMaker'
@@ -42,4 +42,10 @@ export const addRatingValue = tabObj => ({
     path : camalCaseMaker(tabObj.path) ,
     tab : camalCaseMaker(tabObj.tab) , 
     value : tabObj.value.newValue
+})
+
+export const deleteListValue = tabObj => ({
+    type: DELETE_LIST_VALUE ,
+    tab : camalCaseMaker(tabObj.tab) , 
+    list : tabObj.list
 })

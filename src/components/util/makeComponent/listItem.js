@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{ useState} from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
@@ -41,24 +41,16 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     margin: 'auto',
     border:'1px solid #dedede',
-    padding: '1rem 2.5rem',
+    padding: '1rem ',
     width: '90%',
 
   }
-  const ThTdStyle = {
-    textAlign: 'center',
-    margin: 'auto',
-    border:'1px solid #dedede',
-    padding: '1rem',
-    minWidth: '90%',
-    overflow: 'hidden',
-    display: 'inline-block',
-    whiteSpace: 'nowrap'
-  }
 
-const ListItem = ({itemData}) => {  
+
+const ListItem = ({itemData , index , handleDelete}) => { 
+    const [isExpand , setIsExpand] = useState(false)
     const classes = useStyles()
-
+    
     const getKeyByValue = (object, value) =>  {
         return Object.keys(object).find(key => object[key] === value);
       }
@@ -79,7 +71,7 @@ const ListItem = ({itemData}) => {
 
     const listItems = []
 
- iteratableData.map( (data , index) =>  listItems.push( 
+    iteratableData.map( (data , index) =>  listItems.push( 
             <tr style={tableStyle}>
                  <td style={tableStyle}> { nonCamelCaseMaker(iteratablekey[index])} </td>
                  <td style={tableStyle}> {itemData[data]} </td>
@@ -90,8 +82,11 @@ const ListItem = ({itemData}) => {
     return (
 
         itemData[iteratableData[0]] && (<div className={classes.root}>
-            <ExpansionPanel>
+            <ExpansionPanel 
+                expanded={isExpand} 
+            >
                 <ExpansionPanelSummary
+                onClick={() => setIsExpand(prv => !prv)}  
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"
                 id="panel1a-header"
@@ -102,7 +97,7 @@ const ListItem = ({itemData}) => {
                 <Typography>
                     <div className={classes.gridRoot}>
                         <Grid container spacing={3}>
-
+                        <Grid item xs={12}>
                         <div className="showList">
                             <table className={classes.table} style={tableStyle} cellpadding="55">
                                     <thead style={tableStyle}>
@@ -111,22 +106,20 @@ const ListItem = ({itemData}) => {
                                             <th style={tableStyle}>Value</th>
                                         </tr>
                                     </thead>
-                                    <tbody style={tableStyle}>
-                                        
-
-                                        {
-                                            listItems
-                                        }
-
-                                            {/* <td style={tableStyle}>January</td>
-                                            <td style={tableStyle}>$100</td>
-                                              <td style={tableStyle}>{itemData[index]}</td> */}
-
-                                        
+                                    <tbody style={tableStyle}>                                   
+                                        {listItems}                                                                              
                                     </tbody>
                             </table>
                         </div>
 
+                        </Grid>
+                        <Grid item xs={12}>
+                            <button 
+                                onClick={() => {handleDelete(index) ; setIsExpand(false)} }
+                                > 
+                                    Delete 
+                                </button>
+                        </Grid>
                         </Grid>
                     </div>
                 </Typography>

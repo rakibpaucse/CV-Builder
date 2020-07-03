@@ -4,7 +4,7 @@ import {  useDispatch , useSelector } from 'react-redux'
 import CheckBox from '../../checkBox';
 import LineBreak from '../../lineBreak';
 import SecComp from './secondaryComponent'
-import { addTabValue } from '../../../../store/leftSide/action/actionCreators'
+import { addTabValue , deleteListValue} from '../../../../store/leftSide/action/actionCreators'
 import { Container } from '@material-ui/core'
 import  ListItem  from '../listItem'
 
@@ -22,7 +22,12 @@ const Secondary = ({label}) => {
         dispatch(addTabValue({ oldValue :label , value : val}))
     }
 
- 
+    const handleDelete = index => {
+        const newList = fullList.splice(index , 1 )
+        dispatch(deleteListValue({ tab : label , list : fullList}))
+    }
+
+  
     return (
         <div>
             <CheckBox label={value? value: label} handleChange={handleChange}/>
@@ -31,7 +36,7 @@ const Secondary = ({label}) => {
 
             <Container maxWidth="sm" >
                 {
-                     fullList.map(listItem => <ListItem itemData={listItem}/> )
+                     fullList.map((listItem ,index ) => <ListItem itemData={listItem} index={index} handleDelete={handleDelete}/> )
                  }
                 <SecComp label={label}/>
             </Container>

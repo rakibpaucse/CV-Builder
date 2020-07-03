@@ -67,4 +67,17 @@ export const resetObj = current => {
 }
 
 
+export const removeUnderScore = text => {
+    const data = []   
+    var removeUnderScoreText = []
 
+    for( var i = 0 ; i < text.length ; i++){
+      data.push(text[i])
+    }
+    
+    data.map( dt  => (dt === '_') ? 
+        removeUnderScoreText.push(' ') : removeUnderScoreText.push(dt)  
+    )
+
+    return removeUnderScoreText
+}

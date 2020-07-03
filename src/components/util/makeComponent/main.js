@@ -5,7 +5,7 @@ import {  useDispatch , useSelector } from 'react-redux'
 import CheckBox from '../checkBox';
 import LineBreak from '../lineBreak';
 import MainComponent from './mainCoponent';
-import { addTabValue } from '../../../store/leftSide/action/actionCreators'
+import { addTabValue , deleteListValue } from '../../../store/leftSide/action/actionCreators'
 import ListItem from './listItem';
 
 
@@ -30,20 +30,26 @@ const Main = ({data}) => {
 
     }
 
-    // console.log(fullList)
+    const handleDelete = index => {
+        const newList = fullList.splice(index , 1 )
+        // console.log(' index :' , index)
+        // console.log(' new list :' , newList)
+        dispatch(deleteListValue({ tab : label , list : fullList}))
+    }
+
+  
      
 
     return (
         <div>
-
 
             <CheckBox label={value? value: TabName} handleChange={handleChange}/>
             <LineBreak/>
 
             <Container maxWidth="sm" >
                 {
-                    showBtn && fullList.map(listItem => <ListItem itemData={listItem}/> )
-                 }
+                    showBtn && fullList.map((listItem , index) => <ListItem itemData={listItem} index={index} handleDelete={handleDelete}/> )
+                }
 
                <MainComponent  id={id} TabName={label}  textFields={textFields} showBtn={showBtn}/>
             </Container>

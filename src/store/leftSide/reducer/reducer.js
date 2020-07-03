@@ -3,6 +3,7 @@ import {
         ADD_INPUT_VALUE , 
         ADD_LIST_ITEM , 
         RESET_OBJ ,
+        DELETE_LIST_VALUE
         } from '../action/actionTypes'
         
 import info from '../../../constant/jsonFile'
@@ -72,7 +73,20 @@ const reducer = ( state = initial_state , action ) => {
         }
 
 
-
+       case DELETE_LIST_VALUE : {
+           const tab = action.tab
+           const list = action.list
+           return{
+               ...state ,
+                [tab] : {
+                    ...state[tab],
+                    items : {
+                        ...state[tab].items,
+                        list: list
+                    }
+                }
+           }
+       }
 
 
         default : {  

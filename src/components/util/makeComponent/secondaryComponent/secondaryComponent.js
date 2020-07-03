@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {ExpansionPanel , Typography } from '@material-ui/core';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
@@ -39,6 +39,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const SecondaryComponent = ({label}) => {
+    const [isExpand , setIsExpand] = useState(false)
     const classes = useStyles();
     const dispatch = useDispatch();
     const stateLabelValue = useSelector(state => state[label].items)
@@ -52,9 +53,11 @@ const SecondaryComponent = ({label}) => {
  
     return (
         <div className={classes.root}>
-        <ExpansionPanel> 
-
+            <ExpansionPanel 
+                expanded={isExpand} 
+                >
             <ExpansionPanelSummary
+                onClick={() => setIsExpand(prv => !prv)}  
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"
                 id="panel1a-header"
@@ -70,7 +73,7 @@ const SecondaryComponent = ({label}) => {
                         </Grid>
                         <Grid item xs={2} className={classes.grid}>
                             <IconButton className={classes.iconbtn}>
-                                <AddBoxIcon className={classes.icon} onClick={() => handleClick()}/>
+                                <AddBoxIcon className={classes.icon} onClick={() => {  setIsExpand(false) ; handleClick()} }/>
                             </IconButton>
                         </Grid>
                     </Grid>
