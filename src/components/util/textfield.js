@@ -7,8 +7,9 @@ import { useDispatch , useSelector} from 'react-redux'
 import {addInputValue} from '../../store/leftSide/action/actionCreators'
 import {camalCaseMaker} from '../util/camelCaseMaker'
 
-import {Button , IconButton} from '@material-ui/core';
-import PhotoCamera from '@material-ui/icons/PhotoCamera';
+
+
+
 
 const useStyles = makeStyles((theme) => ({
 
@@ -31,16 +32,17 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-const Textfield = ({label , placeholder , tab }) => {
+const Textfield = ({label , placeholder , tab  }) => {
     const classes = useStyles();
     const dispatch = useDispatch();
     const stateLabelValue = useSelector(state => state[camalCaseMaker(tab)].items[camalCaseMaker(label)])
+    // const havePhoto = useSelector(state => state.profile.items.photoUrl)
 
 
     const onChange = e => {
 
         dispatch(addInputValue({
-            value:e.target.value ,
+            value:e.target.value,
             path: e.target.attributes.placeholder.value,
             tab : tab
             }))
@@ -65,9 +67,7 @@ const Textfield = ({label , placeholder , tab }) => {
                         <InputAdornment position="start">
                             <SubdirectoryArrowRightIcon style={{fill:'currentColor'}}/>
                         </InputAdornment>
-                        {/* <InputAdornment position="end" >
-                             <PhotoCamera />
-                        </InputAdornment> */}
+
                       </>
                     ),
                 }} />

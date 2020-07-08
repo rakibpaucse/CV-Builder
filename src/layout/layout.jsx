@@ -2,6 +2,7 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
+import { PDFViewer } from '@react-pdf/renderer';
 
 // import { LeftSide, ShowCase , RightSide } from '../pages/pages'
 import LeftSide from '../pages/leftSide/leftSide'
@@ -27,11 +28,11 @@ const Pages = () => {
     return (
             <div className={classes.root}>
                 <Grid container spacing={3}>
-                    <Grid item xs={6}>
+                    <Grid item xs={3}>
                         <LeftSide className={classes.paper}>xs=12</LeftSide>
                     </Grid>
-                    <Grid item xs={3}>
-                        <ShowCase className={classes.paper}>xs=6</ShowCase>
+                    <Grid item xs={6}>
+                            <ShowCase className={classes.paper}>xs=6</ShowCase>
                     </Grid>
                     <Grid item xs={3}>
                         <RightSide className={classes.paper}>xs=6</RightSide>

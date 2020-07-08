@@ -1,11 +1,11 @@
-import React from 'react'
+import React,{createRef } from 'react'
+import GeneratePdf from '../../components/showcase/pdfGenerate/pdfGenerate'
 
-const showCase = () => {
-    return (
-        <div>
-            This Is main Showcaswe
-        </div>
-    )
+
+
+const ShowCase = () => {
+const reff = createRef()
+    return (<GeneratePdf forwardedRef={reff}/>)
 }
 
-export default showCase
+export default ShowCase
