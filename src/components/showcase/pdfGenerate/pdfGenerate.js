@@ -1,40 +1,40 @@
-import React,{useState} from 'react'
+import React from 'react'
+import { makeStyles } from '@material-ui/core/styles';
 import {
     Card,
     Typography,
     Container,
     Grid
     } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
 import html2canvas from 'html2canvas';
 import * as jsPDF from 'jspdf'
 import { useSelector } from 'react-redux'
 import info from '../../../constant/jsonFile'
 
+import DefaultTemplate from '../templates/defaultTemplate'
 
 
 const useStyles = makeStyles((theme) => ({
 
     card: {
-        width : '90%',
+        width : '95%',
         // height : '90vh',
-        padding : 10
+        // padding : 10
     },
 
 
-}))
+}))    
 
 
 const PdfGenerate = ({forwardedRef}) => {
-    const [imgLink , setImgLink ] = useState()
     const classes = useStyles()
     const state = useSelector(state => state)
-    const everyItems = Object.keys(info)
+    const everyItems = Object.keys(state)
     var mainData = {}
     everyItems.map((item , index) => {
     Object.assign(mainData, {[everyItems[index]] : {...state[item].items}});
     })
-    
+        
     
     const handleClick = () => {
         html2canvas( forwardedRef.current  , {
@@ -69,44 +69,14 @@ const PdfGenerate = ({forwardedRef}) => {
             })
     } 
 
-    const imgHandler = () => {
-
-        const reader = new FileReader()
-        reader.onload = () =>{
-            if(reader.readyState === 2){
-              setImgLink(reader.result)
-            }
-          }
-        reader.readAsDataURL(mainData.profile.photoUrl)
-    }
-console.log(mainData.profile.photoUrl);
-
     return (
                
-        <Card className={classes.card}>  
-
-        <Container maxWidth="sm" ref={forwardedRef} >
-          <Typography component="div" style={{ backgroundColor: '#cfe8fc', height: '90vh' }} >
-
-          <Grid container spacing={3}>
-             <Grid item xs={12}> 
-                <Grid item xs={6}> 
-                    {mainData.profile.firstName}
-                </Grid>              
-                <Grid item xs={6}> 
-                    {mainData.profile.lastName}
-                </Grid> 
-             </Grid> 
-             <Grid item xs={6}> 
-                    { mainData.profile.photoUrl  &&    <img src={imgLink}  style={{width: 150 , height:150 , border: '1px solid'}} onChange={imgHandler}/> }
-            </Grid> 
-          </Grid>
-        
-          </Typography>
-        </Container>
+        <Card className={classes.card}>     
+            <Container  ref={forwardedRef} >
+                <DefaultTemplate mainData={mainData}/>
+            </Container>
 
             <button onClick={handleClick}> CLICK HERE</button>
-
         </Card>  
     
     )

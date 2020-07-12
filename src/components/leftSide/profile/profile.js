@@ -10,6 +10,9 @@ import {addInputValue} from '../../../store/leftSide/action/actionCreators'
 import TextField from '../../util/textfield'
 import LineBreak from '../../util/lineBreak'
 
+import ImagePreview from '../../showcase/pdfGenerate/imagePreview'
+
+
 const tabPanelDesign = {
         padding : '20px 10px',
         background : '#f5f5f5'
@@ -20,8 +23,6 @@ const Profile = () => {
     const dispatch = useDispatch();
     const [open, setOpen] = useState(false);
     const tabName = 'profile'
-
-
 
     return (
         <div style={tabPanelDesign}>
@@ -56,17 +57,24 @@ const Profile = () => {
                             filesLimit={1}
                             open={open}
                             onClose={() => setOpen(false)}
+
                             onSave={(files) => {
-                            console.log('Files:', files);
-                            dispatch(addInputValue({
-                                value:files[0].path,
-                                path: 'Photo Url',
-                                tab : 'profile'
-                                }))
-                                
-                                // handleFile(files)
+
+                                         const reader = new FileReader();
+                                         reader.onload = () =>{
+                                           if(reader.readyState === 2){
+                                            dispatch(addInputValue({
+                                                value: [files[0] , reader.result] ,
+                                                path: 'Photo Url',
+                                                tab : 'profile'
+                                                }))  
+                                           }
+                                     }
+                                         reader.readAsDataURL(files[0])
+                                                                                                  
                                 setOpen(false);
                             }}
+
                             showPreviews={true}
                             showFileNamesInPreview={true}
                 />

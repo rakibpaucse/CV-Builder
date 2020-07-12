@@ -29,13 +29,13 @@ const Pages = () => {
             <div className={classes.root}>
                 <Grid container spacing={3}>
                     <Grid item xs={3}>
-                        <LeftSide className={classes.paper}>xs=12</LeftSide>
+                        <LeftSide className={classes.paper}/>
                     </Grid>
                     <Grid item xs={6}>
-                            <ShowCase className={classes.paper}>xs=6</ShowCase>
+                            <ShowCase className={classes.paper}/>
                     </Grid>
                     <Grid item xs={3}>
-                        <RightSide className={classes.paper}>xs=6</RightSide>
+                        <RightSide className={classes.paper}/>
                     </Grid>                
                 </Grid>
             </div>
