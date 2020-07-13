@@ -1,11 +1,11 @@
 import { createMuiTheme, responsiveFontSizes } from "@material-ui/core";
 
 let theme = createMuiTheme({
-    // typography: {
-    //     fontFamily: [
-    //       'comicSans', 'wheelFairy'
-    //     ].join(','),
-    // },
+    typography: {
+        fontFamily: [
+          'Roboto Slab'
+        ].join(','),
+    },
     palette: {
         primary: {
             main: '#1349c6'

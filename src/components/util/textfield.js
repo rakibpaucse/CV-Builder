@@ -21,6 +21,9 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
     width : '90%' , 
     padding : '10px',
+      '&:placeholder' : {
+          color : 'red'
+      }
 
   },
   label:{

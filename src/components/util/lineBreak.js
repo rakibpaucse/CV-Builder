@@ -3,11 +3,11 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles(theme => ({
   root: {
-    border: '1px solid #a4a4a4',
+    border: '1px solid #ece6e6',
     width: "100%",
     position: 'relative',
     textAlign : 'center',
-    margin: '20px 0px'
+    // margin: '20px 0px'
   },
 }));
 

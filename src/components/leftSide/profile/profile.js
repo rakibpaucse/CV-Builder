@@ -40,11 +40,11 @@ const Profile = () => {
 
                     <Button
                     size="small"
-                        style={{fontSize:18 , marginTop:35 }}
+                        style={{fontSize:15 , marginTop:35 }}
                         variant="outlined"
                         color="primary"
                         onClick={() => setOpen(true)}
-                        startIcon={<BackupIcon style={{fontSize:35}}/>}
+                        startIcon={<BackupIcon style={{fontSize:22}}/>}
                     >
                         Photo
                     </Button>

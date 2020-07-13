@@ -27,7 +27,7 @@ const Pages = () => {
 
     return (
             <div className={classes.root}>
-                <Grid container spacing={3}>
+                <Grid container spacing={0}>
                     <Grid item xs={3}>
                         <LeftSide className={classes.paper}/>
                     </Grid>
