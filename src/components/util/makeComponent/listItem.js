@@ -5,7 +5,7 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import Grid from '@material-ui/core/Grid';
+import {Grid , Button} from '@material-ui/core';
 import {nonCamelCaseMaker} from '../camelCaseMaker' 
 
 const useStyles = makeStyles((theme) => ({
@@ -33,14 +33,24 @@ const useStyles = makeStyles((theme) => ({
         margin: '0 auto'
     } ,
 
-    table : { background: '#fff' }
+    table : { 
+        textAlign: 'center',
+        margin: 'auto',
+        padding: '1rem 0px',
+        width: '100%',
+     },
+
+    mainTableStyle : {
+        background : '#dbdddc'
+    }
+
 
   }));
 
   const tableStyle = {
     textAlign: 'center',
     margin: 'auto',
-    border:'1px solid #dedede',
+    // border:'1px solid #dedede',
     padding: '1rem ',
     width: '90%',
 
@@ -72,7 +82,7 @@ const ListItem = ({itemData , index , handleDelete}) => {
     const listItems = []
 
     iteratableData.map( (data , index) =>  listItems.push( 
-            <tr style={tableStyle}>
+            <tr className={classes.mainTableStyle}>
                  <td style={tableStyle}> { nonCamelCaseMaker(iteratablekey[index])} </td>
                  <td style={tableStyle}> {itemData[data]} </td>
             </tr>) )
@@ -90,22 +100,24 @@ const ListItem = ({itemData , index , handleDelete}) => {
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1a-content"
                 id="panel1a-header"
+                style={{background : '#f5f0e6'}}
                 >
                 <Typography className={classes.heading}>{itemData[iteratableData[0]]}</Typography>
                 </ExpansionPanelSummary>
+
                 <ExpansionPanelDetails style={{justifyContent:'center'}}>
                 <Typography>
                     <div className={classes.gridRoot}>
                         <Grid container spacing={3}>
                         <Grid item xs={12}>
                         <div className="showList">
-                            <table className={classes.table} style={tableStyle} cellpadding="55">
-                                    <thead style={tableStyle}>
+                            <table className={classes.table}  cellpadding="55">
+                                    {/* <thead style={tableStyle}>
                                         <tr style={tableStyle}>
-                                            <th style={tableStyle}>Name</th>
-                                            <th style={tableStyle}>Value</th>
+                                            <th style={tableStyle}></th>
+                                            <th style={tableStyle}></th>
                                         </tr>
-                                    </thead>
+                                    </thead> */}
                                     <tbody style={tableStyle}>                                   
                                         {listItems}                                                                              
                                     </tbody>
@@ -114,11 +126,14 @@ const ListItem = ({itemData , index , handleDelete}) => {
 
                         </Grid>
                         <Grid item xs={12}>
-                            <button 
-                                onClick={() => {handleDelete(index) ; setIsExpand(false)} }
+                                <Button
+                                        variant="contained"
+                                        color="primary"
+                                        style={{ background : '#42c99a'}}
+                                        onClick={() => {handleDelete(index) ; setIsExpand(false)} }
                                 > 
                                     Delete 
-                                </button>
+                                </Button>
                         </Grid>
                         </Grid>
                     </div>

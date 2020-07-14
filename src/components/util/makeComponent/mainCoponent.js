@@ -27,7 +27,11 @@ const useStyles = makeStyles((theme) => ({
   },
   gridRoot : {
      flexGrow:1
+  } , 
+  icon : {
+    background : '#1a8cc4'
   }
+  
 }));
  
 const MainComponent = ({ id , TabName  , textFields , showBtn}) => {
@@ -94,9 +98,17 @@ const MainComponent = ({ id , TabName  , textFields , showBtn}) => {
                     </Grid>
 
                             {
-                                showBtn &&  <Button variant="contained" color="primary" href="#contained-buttons" onClick={() => { setIsExpand(false) ; handleClick() }}>
-                                                    Add
-                                            </Button>
+                                // showBtn &&  <Button variant="contained" color="primary" href="#contained-buttons" onClick={() => { setIsExpand(false) ; handleClick() }}>
+                                //                     Add
+                                //     </Button>
+                         showBtn &&  <Button
+                                        variant="contained"
+                                        color="primary"
+                                        className={classes.icon}
+                                        onClick={() => { setIsExpand(false) ; handleClick() }}
+                                        >
+                                        Include
+                                    </Button>
                             }
                 </div>
             </Typography>

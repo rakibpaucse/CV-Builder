@@ -4,7 +4,7 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { makeStyles } from '@material-ui/core/styles';
-import {  IconButton , Grid} from '@material-ui/core';
+import {  IconButton , Grid , Button} from '@material-ui/core';
 import AddBoxIcon from '@material-ui/icons/AddBox';
 
 import {  useDispatch , useSelector } from 'react-redux'
@@ -34,7 +34,8 @@ const useStyles = makeStyles((theme) => ({
     
         },
     icon:{
-        fontSize:'38px'
+            fill : '#1a8cc4' , 
+            fontSize : 35
         }
 }));
 
@@ -75,6 +76,7 @@ const SecondaryComponent = ({label}) => {
                             <IconButton className={classes.iconbtn}>
                                 <AddBoxIcon className={classes.icon} onClick={() => {  setIsExpand(false) ; handleClick()} }/>
                             </IconButton>
+
                         </Grid>
                     </Grid>
                 

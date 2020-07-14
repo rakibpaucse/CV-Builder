@@ -45,7 +45,7 @@ const Main = ({data}) => {
 
             <CheckBox label={value? value: TabName} handleChange={handleChange}/>
             <LineBreak/>
-
+                <br/>
             <Container maxWidth="sm" >
                 {
                     showBtn && fullList.map((listItem , index) => <ListItem itemData={listItem} index={index} handleDelete={handleDelete}/> )

@@ -12,10 +12,11 @@ const useStyles = makeStyles((theme) => ({
 
     checkboxHoder : {
       padding :'15px 50px',
+      border : '2px splid'
     },
     checkbox : {
-      fontSize : '56rem',
-      
+        color : '#93d9c1',
+        border : '1px solid',
     },
     inpBase : {
         textAlign:'center',
@@ -51,7 +52,7 @@ const CheckBox = ({label , handleChange}) => {
         <div style={{display:'grid' , gridTemplateColumns: '50% auto' , textAlign:"center"}}>
            <FormControlLabel
                 value="start"
-                control={<Checkbox className={classes.checkbox} color="primary" onChange={handleCheckBox}/>}
+                control={<Checkbox size='medium' className={classes.checkbox} color='primary' onChange={handleCheckBox}/>}
                 labelPlacement="end"
                 className={classes.checkboxHoder}
         />

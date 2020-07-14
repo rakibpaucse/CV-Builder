@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import {ExpansionPanel , Typography , Grid ,IconButton} from '@material-ui/core';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import {Button , Icon} from '@material-ui/core';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { makeStyles } from '@material-ui/core/styles';
 import Rating from '@material-ui/lab/Rating';
@@ -36,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
         paddingLeft: 18
     } ,
     icon:{
-        fontSize:'38px'
+        backgroundColor : '#1a8cc4'
     }
 
 }));
@@ -83,7 +84,7 @@ const LanguagesComponent = ({label}) => {
                     </Grid>
                     <Grid container spacing={3} style={{flexGrow : 1}} className={classes.container}>
                         <Grid item xs={5}>
-                                <Typography variant='h6' className={classes.label} > Rate Yourself :  </Typography>
+                                <Typography variant='h6' className={classes.label} > Rate Yourself   </Typography>
                         </Grid>
                         <Grid item xs={6}>
                         <Rating 
@@ -95,10 +96,19 @@ const LanguagesComponent = ({label}) => {
                                 }}/>
                          </Grid>
                     </Grid>
+
                     <Grid item xs={10} style={{textAlign:'center'}}>
-                        <IconButton >
+                    <Button
+                                variant="contained"
+                                color="primary"
+                                className={classes.icon}
+                                onClick={() => { setIsExpand(false) ; handleClick() }}
+                            >
+                                Include
+                     </Button>
+                        {/* <IconButton >
                                 <AddBoxIcon className={classes.icon} onClick={() => { setIsExpand(false) ; handleClick() }}/>
-                        </IconButton>
+                        </IconButton> */}
                     </Grid>
                 </Grid>
  

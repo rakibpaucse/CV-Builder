@@ -5,7 +5,7 @@ const Certifications = () => {
 
     const data = {
         id : 5 ,
-        name : 'Certification',
+        name : 'Certifications',
         showBtn : true ,
         textFields : [ 'Name' , 'Authority' ,],
         

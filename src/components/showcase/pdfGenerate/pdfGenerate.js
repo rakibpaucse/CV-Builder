@@ -2,16 +2,14 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import {
     Card,
-    Typography,
     Container,
-    Grid
+    Button
     } from '@material-ui/core';
 import html2canvas from 'html2canvas';
 import * as jsPDF from 'jspdf'
 import { useSelector } from 'react-redux'
-import info from '../../../constant/jsonFile'
 
-import DefaultTemplate from '../templates/defaultTemplate'
+import DefaultTemplate from '../templates/defaultTheme/defaultTemplate'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -76,7 +74,13 @@ const PdfGenerate = ({forwardedRef}) => {
                 <DefaultTemplate mainData={mainData}/>
             </Container>
 
-            <button onClick={handleClick}> CLICK HERE</button>
+            <Button
+                variant="contained"
+                color="primary"
+                style={{ background : '#42c99a'}}
+                onClick={handleClick}> 
+                DownLoad PDF
+            </Button>
         </Card>  
     
     )

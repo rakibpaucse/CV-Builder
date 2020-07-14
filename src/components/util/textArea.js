@@ -38,7 +38,7 @@ const TextArea = ({label}) => {
             </Typography>
             <TextareaAutosize 
             aria-label="minimum height" 
-            style={style} rowsMin={12}
+            style={style} rowsMin={10}
             onChange = {onChange}
             value={valueOfDescription}
              placeholder={`Write About Your ${label}...`} />

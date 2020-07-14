@@ -1,8 +1,6 @@
-import React,{useState , useEffect} from 'react'
+import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import {
-    Card,
-    Typography,
     Container,
     Grid,
     List,
@@ -13,6 +11,8 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 import PhoneIcon from '@material-ui/icons/Phone';
 import DraftsIcon from '@material-ui/icons/Drafts';
 import LanguageIcon from '@material-ui/icons/Language';
+import TemplateBody from './templateBody'
+import LineBreak from '../../../util/lineBreak';
 
 const useStyles = makeStyles((theme) => ({ 
     root : {
@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
         width:'95%', 
         justifyContent: 'start',
         fontSize : 14,
-        marginTop : 10
+        marginTop : 2
     },
     icon : {
         fill: '#ee8f2f',
@@ -58,14 +58,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 const DefaultTemplate = ({mainData}) => {
-
     const classes = useStyles()
-
-
-    // const handleImgLink = () => {const reader = new FileReader()
-    //     reader.onload = () =>{ if(reader.readyState === 2){setImgLink(reader.result)} }
-    // reader.readAsDataURL(mainData.profile.photoUrl[0])}
-
     return (
         <div>
             <Container className={classes.root}  >
@@ -98,6 +91,12 @@ const DefaultTemplate = ({mainData}) => {
                         <span>{mainData.profile.parmanentAddress}</span>
                     </ListItemIcon>}
 
+                    {mainData.profile.currentAddress && <ListItemIcon className={classes.iconHolder}>
+                        <LocationOnIcon style={{color:'transparent'}}/>
+                        <LocationOnIcon className={classes.icon}/>
+                        <span>{`Currently ${mainData.profile.currentAddress}`}</span>
+                    </ListItemIcon>}
+
                     {mainData.profile.phoneNumber && <ListItemIcon className={classes.iconHolder}>
                         <PhoneIcon className={classes.icon}/>
                         <span>{mainData.profile.phoneNumber}</span>
@@ -117,6 +116,10 @@ const DefaultTemplate = ({mainData}) => {
             
         </Grid> 
             </Container>
+
+            <LineBreak/>
+
+            <TemplateBody info ={mainData}/>
         </div>
     )
 }

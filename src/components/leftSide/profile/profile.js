@@ -40,7 +40,7 @@ const Profile = () => {
 
                     <Button
                     size="small"
-                        style={{fontSize:15 , marginTop:35 }}
+                        style={{fontSize:15 , marginTop:30 }}
                         variant="outlined"
                         color="primary"
                         onClick={() => setOpen(true)}

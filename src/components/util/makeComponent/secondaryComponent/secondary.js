@@ -32,6 +32,7 @@ const Secondary = ({label}) => {
         <div>
             <CheckBox label={value? value: label} handleChange={handleChange}/>
             <LineBreak/>
+            <br/>
 
 
             <Container maxWidth="sm" >

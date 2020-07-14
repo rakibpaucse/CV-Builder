@@ -27,16 +27,10 @@ const useStyles = makeStyles((theme) => ({
     color : '#3b3938',
     fontWeight : 'bold',
     padding : '10px -10px',
-    // backgroundColor : '#f5f3f2' ,
-    backgroundColor : '#ECECF7' ,
+    backgroundColor : '#f5f3f2' ,
+    // backgroundColor : '#fdf9f3' ,
+    // backgroundColor : '#cdf5f74d' ,
     borderRight:'2.5px solid #fff',
-    // marginLeft:2.5,
-
-    // '&:focus' : {
-    //     backgroundColor : '#d1cecd',
-    //     color: '#1d995d',
-    //     fontsize: '30px'
-    // } ,
     
   },
 

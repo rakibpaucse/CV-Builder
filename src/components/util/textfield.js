@@ -20,10 +20,12 @@ const useStyles = makeStyles((theme) => ({
   input: {
     margin: theme.spacing(1),
     width : '90%' , 
-    padding : '10px',
-      '&:placeholder' : {
-          color : 'red'
-      }
+    padding : '8px 10px',
+    "&::placeholder": {
+      textOverflow: "ellipsis !important",
+      color: "blue",
+      fontSize: 14
+    }
 
   },
   label:{
@@ -68,7 +70,7 @@ const Textfield = ({label , placeholder , tab  }) => {
                     startAdornment: (
                       <>
                         <InputAdornment position="start">
-                            <SubdirectoryArrowRightIcon style={{fill:'currentColor'}}/>
+                            <SubdirectoryArrowRightIcon style={{fill:'transparent'}}/>
                         </InputAdornment>
 
                       </>

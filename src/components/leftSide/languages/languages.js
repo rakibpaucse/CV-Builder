@@ -33,7 +33,7 @@ const Languages = () => {
         <div>
             <CheckBox label={value? value: label} handleChange={handleChange}/>
             <LineBreak/>
-
+                <br/>
             
             <Container maxWidth="sm" >
                 <Grid container spacing={3}>
