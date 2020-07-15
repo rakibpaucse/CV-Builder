@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import {  useDispatch , useSelector } from 'react-redux'
 import { addInputValue } from '../../store/leftSide/action/actionCreators'
+import { camalCaseMaker } from './camelCaseMaker';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -33,26 +34,32 @@ const useStyles = makeStyles((theme) => ({
 const CheckBox = ({label , handleChange}) => {
 
     const dispatch = useDispatch();
+    const state = useSelector(state => state)
     const classes = useStyles();
     const handleOnchange = e => {
         handleChange(e.target.value) 
     }
 
     const handleCheckBox = e => {
-        console.log(e.target)
         dispatch(addInputValue({
             value:e.target.checked ,
             path: 'shouldShow',
             tab : label
             }))
     }
-
+    
     return (
 
         <div style={{display:'grid' , gridTemplateColumns: '50% auto' , textAlign:"center"}}>
            <FormControlLabel
                 value="start"
-                control={<Checkbox size='medium' className={classes.checkbox} color='primary' onChange={handleCheckBox}/>}
+                control={
+                    <Checkbox size='medium' 
+                    className={classes.checkbox}
+                    color='primary' 
+                    checked = {state[camalCaseMaker(label)].items.shouldshow}
+                    onChange={handleCheckBox}/>
+                    }
                 labelPlacement="end"
                 className={classes.checkboxHoder}
         />

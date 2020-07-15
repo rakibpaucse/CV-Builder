@@ -5,6 +5,15 @@ let theme = createMuiTheme({
         fontFamily: [
           'Roboto Slab'
         ].join(','),
+        
+        itemlebel: {
+            fontSize: 30,
+            color : 'red'
+          },
+
+        itemDes: {
+            fontSize: 20,
+          },
     },
     palette: {
         primary: {
