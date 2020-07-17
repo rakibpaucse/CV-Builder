@@ -12,6 +12,12 @@ import { useSelector } from 'react-redux'
 import DefaultTemplate from '../templates/defaultTheme/defaultTemplate'
 
 
+
+//
+
+import { Document, Page } from 'react-pdf';
+//
+
 const useStyles = makeStyles((theme) => ({
 
     card: {
@@ -40,7 +46,7 @@ const PdfGenerate = ({forwardedRef}) => {
             useCORS: true,
             allowTaint: true,
           }).then(canvas => {
-            const image = canvas.toDataURL('image/jpeg', 90 / 100);
+            const image = canvas.toDataURL('image/jpeg', 100 / 100);
             const doc = new jsPDF({
               orientation: 'portrait',
               unit: 'px',
@@ -67,6 +73,10 @@ const PdfGenerate = ({forwardedRef}) => {
             })
     } 
 
+    const tryOne = () => {
+
+    }
+
     return (
                
         <Card className={classes.card}>     
@@ -78,10 +88,16 @@ const PdfGenerate = ({forwardedRef}) => {
                 variant="contained"
                 color="primary"
                 style={{ background : '#42c99a'}}
-                onClick={handleClick}> 
+                // onClick={handleClick}> 
+                onClick={() => <Document inputRef={forwardedRef}><Page/></Document>}> 
                 DownLoad PDF
             </Button>
         </Card>  
+
+
+        // <Document inputRef={forwardedRef}>
+        //     <Page/>
+        // </Document>
     
     )
 }

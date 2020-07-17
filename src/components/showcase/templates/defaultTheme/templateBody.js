@@ -5,11 +5,12 @@ import {
     Container,
     Button,
     Grid,
-    Box,
     Typography,
     List,
     ListItem
     } from '@material-ui/core';
+import Rating from '@material-ui/lab/Rating';
+
 
 const useStyles = makeStyles((theme) => ({
 
@@ -66,15 +67,16 @@ const TemplateBody = ({info}) => {
             { info[objective].shouldshow && 
                 <Grid  item xs={12} > 
                     <Typography style={labelStyle}> {objective.toUpperCase()} </Typography>
-                   { (info[objective].objectiveHeader || info[objective].description) && 
+                   
                         <List  className={classes.list}> 
 
                             {info[objective].objectiveHeader &&
                             <ListItem  className={classes.listHead}> {info[objective].objectiveHeader} </ListItem>}
-                            <ListItem > {info[objective].description} </ListItem>
+                            { info[objective].description && 
+                            <ListItem > {info[objective].description} </ListItem>}
 
                         </List>
-                    }
+                    
                 </Grid>
             }
 
@@ -85,12 +87,12 @@ const TemplateBody = ({info}) => {
                     {(info[work_experience].list.length > 0) && 
                         <List  className={classes.list}> 
                             {
-                                info.work_experience.list.map( item => 
+                                info[work_experience].list.map( item => 
                                     <ListItem style={{borderBottom:'2px solid #fff' , padding : '0px 5px'}}> 
                                         <ListItem> {item.orgName} </ListItem>
                                         <ListItem> {item.role} </ListItem>
                                         <ListItem> {'('}{item.startDate} {'-'} {item.endDate}{')'} </ListItem>
-                                        <ListItem> {item.description} </ListItem>
+                                        { item.description && <ListItem> {item.description} </ListItem>}
                                     </ListItem>)
                             }
                         </List>
@@ -108,7 +110,7 @@ const TemplateBody = ({info}) => {
                                         <ListItem> {item.institutionName} </ListItem>
                                         <ListItem> {item.major}{`(${item.grade})`} </ListItem>
                                         { (item.startDate && item.endDate) && <ListItem> {`(${item.startDate} - ${item.endDate})`} </ListItem>}
-                                        <ListItem> {item.description} </ListItem>
+                                        { item.description && <ListItem> {item.description} </ListItem>}
                                     </ListItem>)
                             }
                         </List>
@@ -123,7 +125,7 @@ const TemplateBody = ({info}) => {
 
 
             { info[awards].shouldshow && 
-                <Grid container item xs={6} > 
+                <Grid  item xs={6} > 
                     <Typography style={labelStyle}> {`Honours & ${awards}`.toUpperCase()} </Typography>
 
                     {(info[awards].list.length > 0) && 
@@ -133,7 +135,7 @@ const TemplateBody = ({info}) => {
                                     <ListItem style={{borderBottom:'2px solid #fff' , padding : '0px 5px'}}> 
                                         <ListItem> {item.title} </ListItem>
                                         { item.subtitle && <ListItem> {item.subtitle} </ListItem>}
-                                        <ListItem> {item.description} </ListItem>
+                                        { item.description && <ListItem> {item.description} </ListItem>}
                                     </ListItem>)
                             }
                         </List>
@@ -142,7 +144,7 @@ const TemplateBody = ({info}) => {
                 </Grid>
             }
             { info[certifications].shouldshow && 
-                <Grid container item xs={6} > 
+                <Grid  item xs={6} > 
                     <Typography style={labelStyle}> {certifications.toUpperCase()} </Typography>
 
                     {(info[certifications].list.length > 0) && 
@@ -152,7 +154,7 @@ const TemplateBody = ({info}) => {
                                     <ListItem style={{borderBottom:'2px solid #fff' , padding : '0px 5px'}}> 
                                         <ListItem> {item.name} </ListItem>
                                         { item.authority && <ListItem> {item.authority} </ListItem>}
-                                        <ListItem> {item.description} </ListItem>
+                                        { item.description && <ListItem> {item.description} </ListItem>}
                                     </ListItem>)
                             }
                         </List>
@@ -161,7 +163,7 @@ const TemplateBody = ({info}) => {
                 </Grid>
             }
             { info[skill].shouldshow && 
-                <Grid container item xs={6} > 
+                <Grid  item xs={6} > 
                     <Typography style={labelStyle}> {skill.toUpperCase()} </Typography>
                    
                     {(info[skill].list.length > 0) && 
@@ -177,7 +179,7 @@ const TemplateBody = ({info}) => {
                 </Grid>
             }
             { info[hobby].shouldshow && 
-                <Grid container item xs={6} > 
+                <Grid  item xs={6} > 
                     <Typography style={labelStyle}> {hobby.toUpperCase()} </Typography>
 
                     {(info[hobby].list.length > 0) && 
@@ -196,18 +198,66 @@ const TemplateBody = ({info}) => {
                 <Grid container item xs={12} > 
                     <Typography style={labelStyle}> {references.toUpperCase()} </Typography>
                            
+                    {(info[references].list.length > 0) && 
+                        <Container  className={classes.list}> 
+                            {
+                                info[references].list.map( item => 
+                                    <ListItem style={{borderBottom:'2px solid #fff' , padding : '0px 5px'}}> 
+                                        <ListItem> {item.name} </ListItem>
+                                        { item.position && <ListItem> {item.position} </ListItem>}
+                                        { item.phoneNumber && <ListItem> {item.phoneNumber} </ListItem>}
+                                        { item.emailAddress && <ListItem> {item.emailAddress} </ListItem>}
+                                        { item.description && <ListItem> {item.description} </ListItem>}
+                                    </ListItem>)
+                            }
+                        </Container>
+                    }
+
                 </Grid>
             }
             { info[languages].shouldshow && 
-                <Grid container item xs={6} > 
+                <Grid  item xs={6} > 
                     <Typography style={labelStyle}> {languages.toUpperCase()} </Typography>
                    
+                    {(info[languages].list.length > 0) && 
+                        <Container  className={classes.list}> 
+                            {
+                                info[languages].list.map( item => 
+                                    <ListItem style={{borderBottom:'2px solid #fff' , padding : '0px 5px'}}> 
+                                        <ListItem> {item.languageName} </ListItem>
+                                        <ListItem>
+                                        { item.level && <ListItem> {item.level} </ListItem>}
+
+                                                {item.rating && <Rating 
+                                                  name="simple-controlled"
+                                                  value={item.rating}
+                                                  size="small" />}
+                                             </ListItem>
+                                    </ListItem>)
+                            }
+                        </Container>
+                    }
+
                 </Grid>
             }
             { info[extra_curriculam].shouldshow && 
-                <Grid container item xs={6} > 
+                <Grid  item xs={6} > 
                     <Typography style={labelStyle}> { `${extra_curriculam} Activities`.toUpperCase() }</Typography>
                    
+                    {(info[extra_curriculam].list.length > 0) && 
+                        <List  className={classes.list}> 
+                            {
+                                info[extra_curriculam].list.map( item => 
+                                    <ListItem style={{borderBottom:'2px solid #fff' , padding : '0px 5px'}}> 
+                                        <ListItem> {item.curriculamName} </ListItem>
+                                        { item.curriculamDetails && <ListItem> {item.curriculamDetails} </ListItem>}
+                                        { item.description && <ListItem> {item.description} </ListItem>}
+                                    </ListItem>)
+                            }
+                        </List>
+                    }
+
+
                 </Grid>
             }
         </Grid>
