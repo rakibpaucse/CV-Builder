@@ -23,7 +23,6 @@ import References from '../../components/leftSide/references/references'
 import Extras from '../../components/leftSide/extras/extras'
 
 
-
 const TabPanel = props => {
     const { children, value, index, ...other } = props;
   

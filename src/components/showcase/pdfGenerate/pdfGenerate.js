@@ -15,13 +15,13 @@ import DefaultTemplate from '../templates/defaultTheme/defaultTemplate'
 
 //
 
-import { Document, Page } from 'react-pdf';
+// import { Document, Page } from 'react-pdf';
 //
 
 const useStyles = makeStyles((theme) => ({
 
     card: {
-        width : '95%',
+        width : '100%',
         // height : '90vh',
         // padding : 10
     },
@@ -88,8 +88,8 @@ const PdfGenerate = ({forwardedRef}) => {
                 variant="contained"
                 color="primary"
                 style={{ background : '#42c99a'}}
-                // onClick={handleClick}> 
-                onClick={() => <Document inputRef={forwardedRef}><Page/></Document>}> 
+                onClick={handleClick}> 
+                 {/* onClick={() => <Document inputRef={forwardedRef}><Page/></Document>}>  */}
                 DownLoad PDF
             </Button>
         </Card>  
