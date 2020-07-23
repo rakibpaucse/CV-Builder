@@ -5,7 +5,7 @@ import {useSelector  } from 'react-redux'
 
 const Hobbies = () => {
 
-    const tabName = useSelector(state => Object.keys(state)[7])
+    const tabName = useSelector(({leftReducer}) => Object.keys(leftReducer)[7])
 
 
     return (

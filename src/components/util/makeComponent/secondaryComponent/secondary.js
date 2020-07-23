@@ -14,7 +14,7 @@ import  ListItem  from '../listItem'
 const Secondary = ({label}) => {
     const [value , setvalue] = useState('')
     const dispatch = useDispatch();
-    const fullList = useSelector(state => state[label].items.list)
+    const fullList = useSelector(({leftReducer}) => leftReducer[label].items.list)
 
 
     const handleChange = val => {

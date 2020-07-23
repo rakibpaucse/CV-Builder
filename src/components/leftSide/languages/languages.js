@@ -14,8 +14,12 @@ const Languages = () => {
 
     const [value , setvalue] = useState('')
     const dispatch = useDispatch();
-    const label = useSelector( state => Object.keys(state)[8])
-    const fullList = useSelector(state => state[label].items.list)
+
+    const label = useSelector( ({leftReducer}) => Object.keys(leftReducer)[8])
+    const fullList = useSelector(({leftReducer}) => leftReducer[label].items.list)
+
+    // const label = useSelector( state => Object.keys(state)[8])
+    // const fullList = useSelector(state => state[label].items.list)
 
 
     const handleChange = val => {

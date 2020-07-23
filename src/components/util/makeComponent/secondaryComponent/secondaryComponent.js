@@ -43,7 +43,7 @@ const SecondaryComponent = ({label}) => {
     const [isExpand , setIsExpand] = useState(false)
     const classes = useStyles();
     const dispatch = useDispatch();
-    const stateLabelValue = useSelector(state => state[label].items)
+    const stateLabelValue = useSelector(({leftReducer}) => leftReducer[label].items)
     
 
     const handleClick = () => {

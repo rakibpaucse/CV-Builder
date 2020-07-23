@@ -47,7 +47,7 @@ const LanguagesComponent = ({label}) => {
     const classes = useStyles();
     const [ratingValue, setRatingValue] = useState(2);
     const dispatch = useDispatch();
-    const stateLabelValue = useSelector(state => state[label].items)
+    const stateLabelValue = useSelector(({leftReducer}) => leftReducer[label].items)
 
 
     const handleClick = () => {

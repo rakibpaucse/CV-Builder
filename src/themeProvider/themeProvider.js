@@ -25,7 +25,8 @@ let theme = createMuiTheme({
             main: '#f5f5f5'
         },
        
-    }
+    },
+    liner_background : 'linear-gradient(90deg, rgb(249, 241, 234) 0%, rgb(252, 248, 244) 33%, rgb(255, 255, 255) 100%)' 
 })
 
 theme = responsiveFontSizes(theme);

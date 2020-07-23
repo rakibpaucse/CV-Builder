@@ -3,7 +3,7 @@ import SecondaryComponent from '../../util/makeComponent/secondaryComponent/seco
 import {useSelector  } from 'react-redux'
 
 const Skills = () => {
-    const tabName = useSelector(state => Object.keys(state)[6])
+    const tabName = useSelector(({leftReducer}) => Object.keys(leftReducer)[6])
 
     return (
         <SecondaryComponent label={tabName} />

@@ -18,7 +18,8 @@ const style = {
 const TextArea = ({label}) => {
     const dispatch = useDispatch();
 
-    const valueOfDescription = useSelector(state => state[label].items.description)
+    const valueOfDescription = useSelector(({leftReducer}) => leftReducer[label].items.description)
+    // const valueOfDescription = useSelector(state => state[label].items.description)
 
     const onChange = e => {
 

@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
 const CheckBox = ({label , handleChange}) => {
 
     const dispatch = useDispatch();
-    const state = useSelector(state => state)
+    const state = useSelector(({leftReducer}) => leftReducer)
     const classes = useStyles();
     const handleOnchange = e => {
         handleChange(e.target.value) 

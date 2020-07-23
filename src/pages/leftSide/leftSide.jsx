@@ -41,7 +41,7 @@ const LeftSide = () => {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
-  const tabName = useSelector(state => Object.keys(state))
+  const tabName = useSelector(({leftReducer}) => Object.keys(leftReducer))
 
 
   const handleChange = (event, newValue) => {

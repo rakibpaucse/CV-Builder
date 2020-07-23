@@ -39,8 +39,11 @@ const MainComponent = ({ id , TabName  , textFields , showBtn}) => {
     const [isExpand , setIsExpand] = useState(false)
 
     const dispatch = useDispatch();
-    const stateLabelkey = useSelector(state => Object.keys(state)[id])
-    const stateLabelValue = useSelector(state => state[stateLabelkey].items)
+    const stateLabelkey = useSelector(({leftReducer}) => Object.keys(leftReducer)[id])
+    const stateLabelValue = useSelector(({leftReducer}) => leftReducer[stateLabelkey].items)
+
+    // const stateLabelkey = useSelector(state => Object.keys(state)[id])
+    // const stateLabelValue = useSelector(state => state[stateLabelkey].items)
 
     const tab = TabName
     const CollapseComponents = []

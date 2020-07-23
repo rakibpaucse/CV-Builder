@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
 
 const PdfGenerate = ({forwardedRef}) => {
     const classes = useStyles()
-    const state = useSelector(state => state)
+    const state = useSelector(({leftReducer}) => leftReducer)
     const everyItems = Object.keys(state)
     var mainData = {}
     everyItems.map((item , index) => {

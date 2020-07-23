@@ -40,7 +40,8 @@ const useStyles = makeStyles((theme) => ({
 const Textfield = ({label , placeholder , tab  }) => {
     const classes = useStyles();
     const dispatch = useDispatch();
-    const stateLabelValue = useSelector(state => state[camalCaseMaker(tab)].items[camalCaseMaker(label)])
+    const stateLabelValue = useSelector(({leftReducer}) => leftReducer[camalCaseMaker(tab)].items[camalCaseMaker(label)])
+    // const stateLabelValue = useSelector(state => state[camalCaseMaker(tab)].items[camalCaseMaker(label)])
     // const havePhoto = useSelector(state => state.profile.items.photoUrl)
 
 
