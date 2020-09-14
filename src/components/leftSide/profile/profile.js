@@ -10,11 +10,10 @@ import {addInputValue} from '../../../store/leftSide/action/actionCreators'
 import TextField from '../../util/textfield'
 import LineBreak from '../../util/lineBreak'
 
-import ImagePreview from '../../showcase/pdfGenerate/imagePreview'
 
 
 const tabPanelDesign = {
-        padding : '20px 10px',
+        padding : '14px 10px',
         background : '#f5f5f5'
         
 }

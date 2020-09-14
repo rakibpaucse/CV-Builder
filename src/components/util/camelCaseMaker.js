@@ -45,7 +45,6 @@ export const renameObjectKey = (oldObj, oldName, newName) => {
             newObj[key] = value;
         }
     });
-console.log(newObj);
 
     return newObj;
 }

@@ -8,7 +8,7 @@ import About from '../../components/rightSide/about/about'
 import Action from '../../components/rightSide/action/acton'
 
 import Font from '../../components/rightSide/font/font'
-import Setting from '../../components/rightSide/setting/setting'
+import Language from '../../components/rightSide/language/language'
 
 import Template from '../../components/rightSide/template/template'
 import Color from '../../components/rightSide/color/color'
@@ -62,7 +62,7 @@ const TabsHolder = ({value}) => {
       </TabPanel>
 
       <TabPanel value={value} index={4}>
-        <Setting/>
+        <Language/>
       </TabPanel>
 
       <TabPanel value={value} index={5}>

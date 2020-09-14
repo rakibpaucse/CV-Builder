@@ -13,18 +13,16 @@ import DefaultTemplate from '../templates/defaultTheme/defaultTemplate'
 
 
 
-//
-
-// import { Document, Page } from 'react-pdf';
-//
 
 const useStyles = makeStyles((theme) => ({
 
     card: {
         width : '100%',
-        // height : '90vh',
-        // padding : 10
     },
+    btn : {
+        background : '#42c99a' ,
+
+    }
 
 
 }))    
@@ -41,6 +39,7 @@ const PdfGenerate = ({forwardedRef}) => {
         
     
     const handleClick = () => {
+
         html2canvas( forwardedRef.current  , {
             scale: 5,
             useCORS: true,
@@ -68,14 +67,10 @@ const PdfGenerate = ({forwardedRef}) => {
 
         doc.addImage(image, 'JPEG', marginX, marginY, canvasWidth, canvasHeight, null, 'SLOW');
         doc.save(`RxResume_${Date.now()}.pdf`);
-
-
             })
+
+
     } 
-
-    const tryOne = () => {
-
-    }
 
     return (
                
@@ -84,14 +79,17 @@ const PdfGenerate = ({forwardedRef}) => {
                 <DefaultTemplate mainData={mainData}/>
             </Container>
 
+
+        <div style={{textAlign:'end' , margin:20}}>
             <Button
                 variant="contained"
                 color="primary"
-                style={{ background : '#42c99a'}}
+                className = {classes.btn}
                 onClick={handleClick}> 
                  {/* onClick={() => <Document inputRef={forwardedRef}><Page/></Document>}>  */}
                 DownLoad PDF
             </Button>
+        </div>
         </Card>  
 
 

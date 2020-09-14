@@ -14,9 +14,10 @@ import LanguageIcon from '@material-ui/icons/Language';
 import TemplateBody from './templateBody'
 import LineBreak from '../../../util/lineBreak';
 
+
 const useStyles = makeStyles((theme) => ({ 
     root : {
-         padding: '10px 0px'
+         padding: '10px 0px',
     },
     imgContainer: {
         marginRight:20
@@ -57,8 +58,11 @@ const useStyles = makeStyles((theme) => ({
 
 
 
+
 const DefaultTemplate = ({mainData}) => {
     const classes = useStyles()
+
+
     return (
         <div>
             <Container className={classes.root}  >

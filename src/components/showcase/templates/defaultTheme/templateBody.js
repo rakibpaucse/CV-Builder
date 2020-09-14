@@ -1,9 +1,7 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import {
-    Card,
     Container,
-    Button,
     Grid,
     Typography,
     List,
@@ -43,7 +41,11 @@ const TemplateBody = ({info}) => {
     const classes = useStyles()
 
     const fontColor = useSelector(({rightReducer}) => rightReducer.color.mainColor)
-    
+    const fontFamily = useSelector(({rightReducer}) => rightReducer.font.selectedFont)
+           
+    const fontStyle = {
+        fontFamily: `${fontFamily}`,
+    }
 
     const liner_background = {
         background: fontColor ? 
@@ -55,7 +57,8 @@ const TemplateBody = ({info}) => {
              `linear-gradient(90deg, 
                 ${hexToRgb('#f39c12' , 40)} 0%,
                  ${hexToRgb('#f39c12' , 20)} 33%, 
-                 rgb(255, 255, 255) 100%)`
+                 rgb(255, 255, 255) 100%)` ,
+                 fontFamily: `${fontFamily}`,
     }
 
     const sec_background = {
@@ -79,20 +82,21 @@ const TemplateBody = ({info}) => {
         fontSize: 22,
         color :  `${fontColor}` || '#f39c12'  ,
         textDecoration: 'underline overline' ,
-        margin : '10px 0px 5px'
+        margin : '10px 0px 5px' ,
+        fontFamily: `${fontFamily}`,
     }
 
     return (
-        <Grid container spacing={0} >
+        <Grid container spacing={0} style={fontStyle}>
 
             { info[objective].shouldshow && 
                 <Grid  item xs={12} > 
-                    <Typography style={labelStyle}> {objective.toUpperCase()} </Typography>
+                    <Typography style={labelStyle} > {objective.toUpperCase()} </Typography>
                    
                         <List  className={classes.list} style={liner_background}> 
 
                             {info[objective].objectiveHeader &&
-                            <ListItem  className={classes.listHead}> {info[objective].objectiveHeader} </ListItem>}
+                            <ListItem  className={classes.listHead} > {info[objective].objectiveHeader} </ListItem>}
                             { info[objective].description && 
                             <ListItem > {info[objective].description} </ListItem>}
 

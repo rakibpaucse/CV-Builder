@@ -42,7 +42,6 @@ const RightSide = () => {
 
 //   const tabName = useSelector(state => Object.keys(state))
   const tabName =  Object.keys(info)
-console.log(tabName);
 
 
   const handleChange = (event, newValue) => {

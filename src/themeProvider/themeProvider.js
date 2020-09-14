@@ -3,7 +3,8 @@ import { createMuiTheme, responsiveFontSizes } from "@material-ui/core";
 let theme = createMuiTheme({
     typography: {
         fontFamily: [
-          'Roboto Slab'
+          'Roboto Slab' , 'Bree Serif' ,  'Dosis' , 'Teko' , 'Varela Round',
+           'Playfair Display' , 'Roboto Condensed' , 'Roboto Mono'
         ].join(','),
         
         itemlebel: {
@@ -14,6 +15,8 @@ let theme = createMuiTheme({
         itemDes: {
             fontSize: 20,
           },
+
+
     },
     palette: {
         primary: {
@@ -24,7 +27,10 @@ let theme = createMuiTheme({
         secondary: {
             main: '#f5f5f5'
         },
-       
+        
+        cardHeading : {
+            color: '#4682b4'
+        }
     },
     liner_background : 'linear-gradient(90deg, rgb(249, 241, 234) 0%, rgb(252, 248, 244) 33%, rgb(255, 255, 255) 100%)' 
 })

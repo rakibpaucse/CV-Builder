@@ -1,3 +1,7 @@
+
+
+
+
 const info  = {
   profile :   {         
         items :  { photoUrl : '' , firstName : '' , lastName : '' , occupation : '' , parmanentAddress : '' , currentAddress : '' , phoneNumber : '' , website : '' , email : ''} 
@@ -45,6 +49,8 @@ const info  = {
         items :  { shouldshow : true , list : [] , curriculamName : '' , curriculamDetails: '' , description : '' } 
     } 
 }
+
+
 
 const newState = JSON.parse(JSON.stringify(info));
 

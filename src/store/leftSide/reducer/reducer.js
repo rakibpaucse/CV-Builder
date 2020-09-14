@@ -3,10 +3,16 @@ import {
         ADD_INPUT_VALUE , 
         ADD_LIST_ITEM , 
         RESET_OBJ ,
-        DELETE_LIST_VALUE
+        DELETE_LIST_VALUE,
+        RESET_STORE,
+        DEMO_STATE
         } from '../action/actionTypes'
         
 import info from '../../../constant/jsonFile'
+
+import resetStore from '../../../constant/customStores/resetStore'
+import demoStore from '../../../constant/customStores/demoStore'
+
 import {renameObjectKey , resetObj } from '../../../components/util/camelCaseMaker'
 
 const initial_state =  info;
@@ -87,6 +93,17 @@ const reducer = ( state = initial_state , action ) => {
                 }
            }
        }
+
+
+       case RESET_STORE : {
+           const newState = resetStore
+           return newState
+       }
+
+       case DEMO_STATE : {
+        const newState = demoStore
+        return newState
+    }
 
 
         default : {  

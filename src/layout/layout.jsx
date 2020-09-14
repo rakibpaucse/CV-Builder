@@ -2,12 +2,10 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 
-import { PDFViewer } from '@react-pdf/renderer';
-
-// import { LeftSide, ShowCase , RightSide } from '../pages/pages'
 import LeftSide from '../pages/leftSide/leftSide'
 import ShowCase from '../pages/showCase/showCase'
 import RightSide from '../pages/rightSide/rightSide'
+import DarkBtn from '../components/util/draggableBtn/darkTheme'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -23,6 +21,8 @@ const useStyles = makeStyles((theme) => ({
 
 const Pages = () => {
 
+
+
     const classes = useStyles();
 
     return (
@@ -36,6 +36,8 @@ const Pages = () => {
                     </Grid>
                     <Grid item xs={3}>
                         <RightSide className={classes.paper}/>
+
+                        <DarkBtn/>
                     </Grid>                
                 </Grid>
             </div>

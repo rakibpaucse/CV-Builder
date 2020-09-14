@@ -9,13 +9,13 @@ const leftInfo = {
         selectedFont : '' , list:[]
     },
     action : {
-
+        shouldReset : false , getDemoData : false
     },
     Language: {
-
+        selectedLang : '' , list:[]
     },
     about: {
-
+        
     }
 
 }

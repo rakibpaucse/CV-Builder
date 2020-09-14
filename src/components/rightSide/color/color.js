@@ -3,17 +3,16 @@ import ColoPicker from './colorPickerBuilder'
 import LineBreak from '../../util/lineBreak'
 import {setTheColor} from '../../../store/rightSide/action/actionCreators'
 
-import {useDispatch} from 'react-redux'
+import {useDispatch ,useSelector} from 'react-redux'
 
 const Color = () => {
 
-    const dispatch = useDispatch()
-    const [mainColor, setMainColor] = useState('#f39c12');
+    const dispatch = useDispatch() 
+    const firstColor = useSelector(({rightReducer}) => rightReducer.color.mainColor)
+    const [mainColor, setMainColor] = useState(firstColor);
     const [secColor, setSecColor] = useState('#fff');
 
     const catchMainColor = (val) => {
-console.log(val);
-
          setMainColor(val)
 
             dispatch(setTheColor({
@@ -24,18 +23,15 @@ console.log(val);
 
 
     const catchSecColor = (val) => {
-console.log(val);
-
+        if(secColor != val){
         setSecColor(val)
-
         dispatch(setTheColor({
             mainColor :mainColor,
             SecondaryColor : val
         }))
+        }
     
     } 
-  
-    // console.log(mainColor , secColor);
            
 
     

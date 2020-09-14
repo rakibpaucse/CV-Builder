@@ -2,7 +2,7 @@ import React from 'react'
 import { List, ListItem } from '@material-ui/core';
 import { makeStyles } from "@material-ui/core/styles";
 import { useDispatch } from 'react-redux'
-import {setTheFont} from '../../../store/rightSide/action/actionCreators'
+import {setTheLang} from '../../../store/rightSide/action/actionCreators'
 
 const useStyles = makeStyles(theme => ({
     list : {
@@ -18,50 +18,54 @@ const useStyles = makeStyles(theme => ({
         }
     },
     listItem : {
-
+        textAlign : 'center'
     }
 }))
 
-const Font = () => {
+const Language = () => {
 
     const dispatch = useDispatch()
     const handleClick = e => {
-        dispatch(setTheFont(e.target.innerText))
+        dispatch(setTheLang(e.target.innerText))
     }
     const classes = useStyles()
     return (
         <div>
             <List className={classes.list}>
                 <ListItem onClick={handleClick}>
-                    'Bree Serif', serif
+                     Select English
                 </ListItem>
                 <ListItem onClick={handleClick}>
-                    'Dosis', sans-serif
+                    বাংলা নির্বাচন করুন
                 </ListItem>
                 <ListItem onClick={handleClick}>
-                    'Playfair Display', serif
+                    हिंदी का चयन करें
                 </ListItem>
                 <ListItem onClick={handleClick}>
-                    'Roboto Condensed', sans-serif
+                    حدد اللغة العربية   
                 </ListItem>
                 <ListItem onClick={handleClick}>
-                    'Roboto Mono', monospace
+                        选择中文 正确地
                 </ListItem>
                 <ListItem onClick={handleClick}>
-                    'Roboto Slab', serif
+                        Deutsch auswählen
                 </ListItem>
                 <ListItem onClick={handleClick}>
-                    'Teko', sans-serif
+                    नेपाली छान्नुहोस्
                 </ListItem>
                 <ListItem onClick={handleClick}>
-                    'Teko', sans-serif 
+                    اردو منتخب کریں 
                 </ListItem>
                 <ListItem onClick={handleClick}>
-                    Varela Round
+                    ગુજરાતી પસંદ કરો
                 </ListItem>
             </List>
         </div>
     )
 }
 
-export default Font
+export default Language
+
+
+
+

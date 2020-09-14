@@ -38,12 +38,13 @@ const Main = ({data}) => {
     }
 
   
+     console.log('value' , value);
      
 
     return (
         <div>
 
-            <CheckBox label={value? value: TabName} handleChange={handleChange}/>
+            <CheckBox label={value? value: label} handleChange={handleChange}/>
             <LineBreak/>
                 <br/>
             <Container maxWidth="sm" >

@@ -37,7 +37,10 @@ const CheckBox = ({label , handleChange}) => {
     const state = useSelector(({leftReducer}) => leftReducer)
     const classes = useStyles();
     const handleOnchange = e => {
-        handleChange(e.target.value) 
+        e.target.value ? 
+        handleChange(e.target.value) : 
+        handleChange('TabName'+ Date.now().toString().substr(9))  
+
     }
 
     const handleCheckBox = e => {
@@ -47,7 +50,7 @@ const CheckBox = ({label , handleChange}) => {
             tab : label
             }))
     }
-    
+     console.log(label)
     return (
 
         <div style={{display:'grid' , gridTemplateColumns: '50% auto' , textAlign:"center"}}>

@@ -72,7 +72,7 @@ const LeftSide = () => {
 
 
           {
-            tabName.map( (inf , index) => <Tab className={classes.tab} label={removeUnderScore(inf)} {...allProps(index)} />)
+            tabName.map( (inf , index) => <Tab className={classes.tab} label={removeUnderScore(inf) } {...allProps(index)} />)
           }
 
 

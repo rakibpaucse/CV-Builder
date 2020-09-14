@@ -15,6 +15,12 @@ const style = {
         textAlign : 'center'
     }
 
+const labelStyle = {
+    color: 'green',
+    fontSize : 15,
+    padding: '0px 20px'
+}
+
 const TextArea = ({label}) => {
     const dispatch = useDispatch();
 
@@ -34,7 +40,7 @@ const TextArea = ({label}) => {
 
     return (
         <>
-            <Typography variant="overline" display="block" gutterBottom>
+            <Typography variant="overline" display="block" gutterBottom style={labelStyle}>
                 DesCriPtion
             </Typography>
             <TextareaAutosize 
