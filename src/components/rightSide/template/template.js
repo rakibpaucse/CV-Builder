@@ -1,6 +1,5 @@
 import React from 'react'
 import default_temp from '../../../asset/temp_screenShot/default.png'
-import { GridList, GridListTile } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({

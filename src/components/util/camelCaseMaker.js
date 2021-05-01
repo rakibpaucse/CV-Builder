@@ -85,7 +85,7 @@ export const removeUnderScore = text => {
 
 export const hexToRgb = (hexCode, opacity) => {
 
-    const hex = hexCode.replace('#', '');
+    let hex = hexCode.replace('#', '');
     
     if (hex.length === 3) {
         hex += hex

@@ -6,7 +6,7 @@ import { Card } from '@material-ui/core';
 const ColorPickerBuilder = ({label , catchColor , name }) => {
     const [mainColor, setMainColor] = useState();
 
-    useEffect( () => catchColor(mainColor),[mainColor])
+    useEffect( () => catchColor(mainColor) , [mainColor])
 
     const handleChange = color => setMainColor(color.hex);
     

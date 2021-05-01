@@ -29,9 +29,9 @@ const PdfGenerate = ({forwardedRef}) => {
     const state = useSelector(({leftReducer}) => leftReducer)
     const everyItems = Object.keys(state)
     var mainData = {}
-    everyItems.map((item , index) => {
-    Object.assign(mainData, {[everyItems[index]] : {...state[item].items}});
-    })
+    everyItems.map((item , index) => 
+    Object.assign(mainData, {[everyItems[index]] : {...state[item].items}})
+    )
     
     const handleClick = () => { 
 

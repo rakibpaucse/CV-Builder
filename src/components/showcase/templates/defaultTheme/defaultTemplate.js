@@ -1,8 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import {
-    Container,
-    Grid,
     List,
     ListItemIcon
     } from '@material-ui/core';
@@ -149,7 +147,7 @@ const DefaultTemplate = ({mainData}) => {
                                     mainData.profile.photoUrl: 
                                     mainData.profile.photoUrl[1]}  
                             className={classes.img}                     
-                        crossorigin/> 
+                        crossorigin alt='' /> 
 
                     <div className={classes.setMargin} >
 
@@ -207,56 +205,3 @@ const DefaultTemplate = ({mainData}) => {
 export default DefaultTemplate
 
 
- {/* <Container className={classes.root}  >
-        <Grid container spacing={0} >
-            <Grid container item xs={9}  > 
-                <Grid item className={classes.imgContainer} > 
-                        <img 
-                            src={   mainData.profile.photoUrl[1] ==='t' ? 
-                                        mainData.profile.photoUrl: 
-                                    mainData.profile.photoUrl[1]}  
-                            className={classes.img}                     
-                        /> 
-                </Grid> 
-
-                <Grid container item xs={7} > 
-                    <div className={classes.nameContainer}> 
-                        <span style={{fontSize:25}}> {mainData.profile.firstName} {mainData.profile.lastName} </span>
-                    </div>         
-                    <Grid className={classes.occuPation}>
-                        {mainData.profile.occupation}
-                    </Grid>
-                </Grid> 
-            </Grid> 
-
-            <Grid  item xs={3}  className={classes.location}> 
-                <List >
-                {mainData.profile.parmanentAddress && <ListItemIcon className={classes.iconHolder}>
-                        <LocationOnIcon className={classes.icon}/>
-                        <span>{mainData.profile.parmanentAddress}</span>
-                    </ListItemIcon>}
-
-                    {mainData.profile.currentAddress && <ListItemIcon className={classes.iconHolder}>
-                        <LocationOnIcon className={classes.icon}/>
-                        <span>{`Currently ${mainData.profile.currentAddress}`}</span>
-                    </ListItemIcon>}
-
-                    {mainData.profile.phoneNumber && <ListItemIcon className={classes.iconHolder}>
-                        <PhoneIcon className={classes.icon}/>
-                        <span>{mainData.profile.phoneNumber}</span>
-                    </ListItemIcon>}
-
-                    {mainData.profile.email && <ListItemIcon className={classes.iconHolder}>
-                        <DraftsIcon className={classes.icon}/>
-                        <span>{mainData.profile.email}</span>
-                    </ListItemIcon>}
-
-                    {mainData.profile.website && <ListItemIcon className={classes.iconHolder} >
-                        <LanguageIcon className={classes.icon}/>
-                        <span>{mainData.profile.website}</span>
-                    </ListItemIcon>}
-                </List>
-            </Grid> 
-            
-        </Grid> 
-            </Container> */}

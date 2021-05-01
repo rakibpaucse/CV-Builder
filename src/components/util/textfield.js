@@ -96,9 +96,3 @@ const Textfield = ({label , placeholder , tab  }) => {
 export default Textfield
 
 
-
-{/* <input accept="image/*" className={classes.input} id="icon-button-file" type="file" />
-<label htmlFor="icon-button-file">
-  <IconButton color="primary" aria-label="upload picture" component="span">
-    <PhotoCamera />
-  </IconButton> */}

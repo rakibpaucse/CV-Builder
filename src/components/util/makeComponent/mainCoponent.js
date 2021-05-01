@@ -58,7 +58,7 @@ const MainComponent = ({ id , TabName  , textFields , showBtn}) => {
     }
 
     textFields.map( tf => 
-        {  
+        {
                
                 if (typeof(tf) === 'object')
                 {

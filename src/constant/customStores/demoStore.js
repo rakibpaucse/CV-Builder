@@ -1,4 +1,3 @@
-import ImgUri from './DemoImage'
 
 const info  = {
   profile :   {         
