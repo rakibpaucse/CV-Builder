@@ -23,7 +23,7 @@ const Color = () => {
 
 
     const catchSecColor = (val) => {
-        if(secColor != val){
+        if(secColor !== val){
         setSecColor(val)
         dispatch(setTheColor({
             mainColor :mainColor,

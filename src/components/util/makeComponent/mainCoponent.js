@@ -89,7 +89,7 @@ const MainComponent = ({ id , TabName  , textFields , showBtn}) => {
             <Typography className={classes.heading}>{`Add ${TabName}`}</Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
-            <Typography>
+            <Typography component={'div'}>
                 <div className={classes.gridRoot}>
                     <Grid container spacing={3}>
 

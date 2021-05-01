@@ -9,3 +9,4 @@ const ImagePreview = ({src}) => {
 }
 
 export default ImagePreview
+ 

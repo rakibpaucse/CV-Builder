@@ -4,8 +4,6 @@ import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 
-import {useSelector} from 'react-redux'
-
 import Tabpanel from './tabPanel'
 import info from '../../constant/leftJson'
 
@@ -64,7 +62,7 @@ const RightSide = () => {
         >
 
           {
-            tabName.map( (inf , index) => <Tab className={classes.tab} label={inf} {...allProps(index)} />)
+            tabName.map( (inf , index) => <Tab key={index} className={classes.tab} label={inf} {...allProps(index)} />)
           }
 
         </Tabs>

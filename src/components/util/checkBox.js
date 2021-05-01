@@ -25,10 +25,25 @@ const useStyles = makeStyles((theme) => ({
         background : '#EAEAEA',
         border:'1px sold #E0E0E0',
         margin : '10px 20px 10px -90px',
-        fontSize : 25,
-        letterSpacing: 2
-    
+        fontSize : 23,
+        letterSpacing: 2,
+
+        [theme.breakpoints.up(1200)]: {
+            fontSize : 20,
+            margin : '10px 20px 10px -50px',
+
+        }
   },
+
+  mainContainer : {
+    display:'grid' ,
+    gridTemplateColumns: '50% auto' ,
+    textAlign:"center",
+
+    [theme.breakpoints.up(1200)]: {
+        gridTemplateColumns: '50% auto' ,
+    }
+  }
 }));
 
 const CheckBox = ({label , handleChange}) => {
@@ -53,7 +68,7 @@ const CheckBox = ({label , handleChange}) => {
      console.log(label)
     return (
 
-        <div style={{display:'grid' , gridTemplateColumns: '50% auto' , textAlign:"center"}}>
+        <div className={classes.mainContainer} >
            <FormControlLabel
                 value="start"
                 control={

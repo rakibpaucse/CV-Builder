@@ -43,9 +43,9 @@ const Profile = () => {
                         variant="outlined"
                         color="primary"
                         onClick={() => setOpen(true)}
-                        startIcon={<BackupIcon style={{fontSize:22}}/>}
+                        startIcon={<BackupIcon style={{fontSize:20}}/>}
                     >
-                        Photo
+                         <span style={{fontSize:12}} >Photo</span>
                     </Button>
 
                 <DropzoneDialog
@@ -105,10 +105,10 @@ const Profile = () => {
           <Grid item xs={12}>
               <TextField label='Phone Number'  tab = {tabName}/>
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={6}>
               <TextField label='Website'  tab = {tabName}/>
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={6}>
               <TextField label='Email'  tab = {tabName}/>
           </Grid>
 

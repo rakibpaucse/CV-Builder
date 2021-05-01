@@ -36,7 +36,7 @@ const WorkComponent = ({label}) => {
             <Typography className={classes.heading}>{label}</Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
-            <Typography>
+            <Typography component={'div'}>
                 <div className={classes.gridRoot}>
                     <Grid container spacing={3}>
                         <Grid item xs={12}>

@@ -18,8 +18,12 @@ const useStyles = makeStyles((theme) => ({
         padding : '5px 10px',
         fontSize : 10,
         background : '#4682b4',
-        color : '#fff'
+        color : '#fff',
 
+        '&:hover':{
+            border : '1px solid #4682b4',
+            color : '#4682b4',
+        }
     }
 }))
 
@@ -35,7 +39,7 @@ const MakeCard = ({heading , content , btn , value , action='null'}) => {
             
             dispatch(setTheAction({action:action , value: !value}))
 
-            action == 'getDemoData' ? 
+            action === 'getDemoData' ? 
             dispatch(demoStore()) : dispatch(resetStore())
             
         }else{
@@ -51,7 +55,7 @@ const MakeCard = ({heading , content , btn , value , action='null'}) => {
             </p>
 
             <Button className={classes.btn} onClick={handleClick}> 
-                {btn} 
+                 <p style={{fontSize:13 , lineHeight:0}}> {btn} </p>
             </Button>
         </Card>
     )

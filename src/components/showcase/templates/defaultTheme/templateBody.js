@@ -14,13 +14,31 @@ import { hexToRgb } from '../../../util/camelCaseMaker'
 
 const useStyles = makeStyles((theme) => ({
 
+     
+
+
+        
+
     list : {
         borderRadius : 10,
-        padding : 0
+        padding : 0,
+
+        "& li" : {
+            fontSize : 16,
+
+            [theme.breakpoints.down(1700)]: {
+                fontSize : 14,
+            }
+        },
     },
+    
     listHead : {
         fontSize : 18 ,
        borderBottom : '2px solid #fff',
+
+       [theme.breakpoints.down(1700)]: {
+        fontSize : '16px !important'
+      },
     },
     secContainer : {
         display : 'flex',
@@ -31,7 +49,11 @@ const useStyles = makeStyles((theme) => ({
          padding: '5px 15px',
          borderRadius: 20,
          fontSize: 12,
-         margin : '0px 3px 3px 0px'
+         margin : '0px 3px 3px 0px',
+
+         [theme.breakpoints.down(1700)]: {
+            fontSize : 13
+          },
     }
     
 }))
@@ -55,14 +77,14 @@ const TemplateBody = ({info}) => {
              rgb(255, 255, 255) 100%)` 
              : 
              `linear-gradient(90deg, 
-                ${hexToRgb('#f39c12' , 40)} 0%,
-                 ${hexToRgb('#f39c12' , 20)} 33%, 
+                ${hexToRgb('#0F193F' , 40)} 0%,
+                 ${hexToRgb('#0F193F' , 20)} 33%, 
                  rgb(255, 255, 255) 100%)` ,
                  fontFamily: `${fontFamily}`,
     }
 
     const sec_background = {
-        background : fontColor ? hexToRgb(fontColor , 40) : hexToRgb('#f39c12' , 40)
+        background : fontColor ? hexToRgb(fontColor , 40) : hexToRgb('#0F193F' , 40)
     }
 
     const objective = Object.keys(info)[1]
@@ -77,10 +99,10 @@ const TemplateBody = ({info}) => {
 
     const references = Object.keys(info)[9]
     const extra_curriculam = Object.keys(info)[10]
-
+    
     const labelStyle = {
-        fontSize: 22,
-        color :  `${fontColor}` || '#f39c12'  ,
+        fontSize: ( window.innerWidth > 1400 ) ? 18 : 15 , 
+        color :  `${fontColor}` || '#0F193F'  ,
         textDecoration: 'underline overline' ,
         margin : '10px 0px 5px' ,
         fontFamily: `${fontFamily}`,

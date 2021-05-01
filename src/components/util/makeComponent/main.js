@@ -15,7 +15,7 @@ import ListItem from './listItem';
 const Main = ({data}) => {
 
     const id = data.id
-    const TabName = data.name;
+    // const TabName = data.name;
     const textFields = data.textFields
     const showBtn = data.showBtn
     
@@ -31,7 +31,7 @@ const Main = ({data}) => {
     }
 
     const handleDelete = index => {
-        const newList = fullList.splice(index , 1 )
+        // const newList = fullList.splice(index , 1 )
         // console.log(' index :' , index)
         // console.log(' new list :' , newList)
         dispatch(deleteListValue({ tab : label , list : fullList}))

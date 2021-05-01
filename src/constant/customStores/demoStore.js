@@ -1,7 +1,8 @@
+import ImgUri from './DemoImage'
 
 const info  = {
   profile :   {         
-        items :  { photoUrl : 'https://pickaface.net/gallery/avatar/demo.webmaster541295de29059.png' , firstName : 'Nazrul Islam' , lastName : 'Rakib' , occupation : 'Fullstack Web developer' , parmanentAddress : 'Noakhali' , currentAddress : 'Mirpur' , phoneNumber : '01521333799' , website : 'www.rakib.me' , email : 'rakibpaucse@gmail.com'} 
+        items :  { photoUrl : 'https://n7.nextpng.com/sticker-png/863/636/sticker-png-businessperson-management-computer-icons-patterson-glass-business-case-avatar-man-plan-silhouette-industry-business-model.png' , firstName : 'Nazrul Islam' , lastName : 'Rakib' , occupation : 'Fullstack Web developer' , parmanentAddress : 'Noakhali' , currentAddress : 'Mirpur' , phoneNumber : '01521333799' , website : 'www.rakib.me' , email : 'rakibpaucse@gmail.com'} 
     } ,
 
     objective : { 
@@ -42,7 +43,7 @@ const info  = {
         },{
             shouldshow : true , list : [] , name : 'সেরা পড়ুয়া' , authority : 'বিশ্বসাহিত্য কেন্দ্র' , description : ''
         },{
-            shouldshow : true , list : [] , name : 'Progrmming Contest' , authority : 'Inter University Programming Contest' , description : ''
+            shouldshow : true , list : [] , name : 'Progrmming Contest' , authority : 'I.U. Programming Contest' , description : ''
         }] , name : '' , authority : '' , description : '' } 
     } , 
     skill : { 
@@ -77,16 +78,16 @@ const info  = {
     references : { 
         
         items :  { shouldshow : true , list : [
-            {shouldshow : true , list : [] , name : 'Sheikh Hasina' , position : 'Prime Minister(BNG)' , phoneNumber : '0100000000' ,  emailAddress : 'hasina.sheikh@gmail.com' , description : 'I love Him'},
-            {shouldshow : true , list : [] , name : 'Donald Trump' , position : 'Prime Minister(USA)' , phoneNumber : '94663259681' ,  emailAddress : 'IamTrump@us.com' , description : ' He is a nice guy'}, 
-            {shouldshow : true , list : [] , name : 'Ananta Jalil' , position : 'CEO Jalil group' , phoneNumber : '0195632533' ,  emailAddress : 'IamJalil@gamil.com' , description : ''}
+            {shouldshow : true , list : [] , name : 'Sheikh Hasina' , position : 'Prime Minister(BNG)' , phoneNumber : '' ,  emailAddress : 'hasina.sheikh@gmail.com' , description : 'I recommand him'},
+            {shouldshow : true , list : [] , name : 'Donald Trump' , position : 'Prime Minister(USA)' , phoneNumber : '' ,  emailAddress : 'IamTrump@usa.com' , description : ' He is a nice guy'}, 
+            {shouldshow : true , list : [] , name : 'Ananta Jalil' , position : 'CEO Jalil group' , phoneNumber : '' ,  emailAddress : 'IamJalil@gamil.com' , description : ''}
 ] , name : '' , position : '' , phoneNumber : '' ,  emailAddress : '' , description : '' } 
     } ,
     extra_curriculam : { 
         
         items :  { shouldshow : true , list : [
-            {shouldshow : true , list : [] , curriculamName : 'Debate' , curriculamDetails: '' , description : ''},
-            {shouldshow : true , list : [] , curriculamName : 'Reading Books' , curriculamDetails: 'I love yo read' , description : ''},
+            // {shouldshow : true , list : [] , curriculamName : 'Debate' , curriculamDetails: '' , description : ''},
+            {shouldshow : true , list : [] , curriculamName : 'Reading Books' , curriculamDetails: 'I love to read' , description : ''},
             {shouldshow : true , list : [] , curriculamName : 'Graphics Designing' , curriculamDetails: 'I can make Presentaion , logo etc' , description : ''}
         ] , curriculamName : '' , curriculamDetails: '' , description : '' } 
     } 

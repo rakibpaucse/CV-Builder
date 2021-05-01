@@ -23,7 +23,7 @@ const Secondary = ({label}) => {
     }
 
     const handleDelete = index => {
-        const newList = fullList.splice(index , 1 )
+        // const newList = fullList.splice(index , 1 )
         dispatch(deleteListValue({ tab : label , list : fullList}))
     }
 

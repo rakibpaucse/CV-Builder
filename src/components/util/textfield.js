@@ -24,15 +24,24 @@ const useStyles = makeStyles((theme) => ({
     "&::placeholder": {
       textOverflow: "ellipsis !important",
       color: "blue",
-      fontSize: 14
-    }
+      fontSize: 12,
+    },
+
+      [theme.breakpoints.up(1200)]: {
+        paddingleft: '-10px',
+      }
 
   },
   label:{
         color: 'green',
-        fontSize : 25,
+        fontSize : 20,
         textAlign : 'center',
-        padding: '0px 20px'
+        padding: '0px 20px',
+
+        // ['@media (min-width:1366px)']: {
+          [theme.breakpoints.up(1200)]: {
+          padding: '0px 0px',
+        }
   }
 
 }));
@@ -67,6 +76,7 @@ const Textfield = ({label , placeholder , tab  }) => {
                     InputLabelProps={{
                         className: classes.label 
                       }}
+                      
                     InputProps={{
                     startAdornment: (
                       <>
@@ -76,7 +86,8 @@ const Textfield = ({label , placeholder , tab  }) => {
 
                       </>
                     ),
-                }} />
+                }} 
+                />
             {/* <TextField className={classes.text}  label={label} placeholder={placeholder} variant="outlined" /> */}
         </div>
     )

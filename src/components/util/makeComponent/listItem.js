@@ -106,7 +106,7 @@ const ListItem = ({itemData , index , handleDelete}) => {
                 </ExpansionPanelSummary>
 
                 <ExpansionPanelDetails style={{justifyContent:'center'}}>
-                <Typography>
+                <Typography component={'div'}>
                     <div className={classes.gridRoot}>
                         <Grid container spacing={3}>
                         <Grid item xs={12}>

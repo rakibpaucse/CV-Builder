@@ -8,7 +8,7 @@ import Draggable from 'react-draggable';
 const DraggbleTheme = () => {
 
     const [dark, setDark] = useState(true);
-    const [position, setPosition] = useState({x: 350, y: 52});
+    const [position, setPosition] = useState({x: 250, y: 52});
 
     const onControlledDrag = (e, position) => {
         const {x, y} = position;
@@ -17,6 +17,7 @@ const DraggbleTheme = () => {
 
     const handleChange = (e) => {
       setDark(prev => !prev)
+console.log(dark);
 
     if(dark) {
         document.querySelector('body').style.background = '#3e3d3c'
@@ -40,11 +41,14 @@ const DraggbleTheme = () => {
                 position={position}
                 bounds="body"
                 onDrag={onControlledDrag}
+                scale={0.9}
+                // style={{background:'red'}}
             >
-                    <Fab >
+
+                    <Fab style={dark ? {background:'black'} : {background:'#ddd'} }  onClick={handleChange}>
                         { dark ? 
-                                <Brightness3Icon onClick={handleChange}/> 
-                                : <WbSunnyIcon onClick={handleChange}/>}
+                                <Brightness3Icon style={{color:'#ddd'}} /> 
+                                : <WbSunnyIcon style={{color:'black'}} />}
                     </Fab> 
             </Draggable>
         </div>
