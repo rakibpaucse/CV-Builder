@@ -11,7 +11,7 @@
 
 1.  **Live Links**
 
-   Live : resume-builder2.netlify.app
+   Live : https://resume-builder2.netlify.app/
 
  
 
